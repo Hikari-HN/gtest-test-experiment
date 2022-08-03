@@ -2,10 +2,13 @@
  * @Author: Hikari_HN lizihao_@nudt.edu.cn
  * @Date: 2022-08-03 17:01:53
  * @LastEditors: Hikari_HN lizihao_@nudt.edu.cn
- * @LastEditTime: 2022-08-03 17:06:09
+ * @LastEditTime: 2022-08-03 17:20:36
  * @FilePath: /gtest-test-experiment/test.cpp
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Hikari_HN lizihao_@nudt.edu.cn, All Rights Reserved. 
  */
+
 #include <iostream>
 #include "SuperString.cc"
 #include <gtest/gtest.h>
