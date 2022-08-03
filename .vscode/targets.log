@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug  3 13:11:06 2022
+# Make data base, printed on Wed Aug  3 17:02:49 2022
 
 # Variables
 
@@ -29,7 +29,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/hikari/SuperString
+PWD = /home/hikari/gtest-test-experiment
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -47,9 +47,9 @@ LANG = C
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/hikari/SuperString
+CURDIR := /home/hikari/gtest-test-experiment
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
@@ -99,7 +99,7 @@ MOTD_SHOWN = update-motd
 # automatic
 ^F = $(notdir $^)
 # environment
-WT_SESSION = b078e814-c28e-4f7c-8908-59c2e4153283
+WT_SESSION = f45a4635-56ce-401f-9f77-29ea3f8516bc
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
@@ -113,7 +113,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # automatic
 +F = $(notdir $+)
 # environment
-WSL_INTEROP = /run/WSL/1030_interop
+WSL_INTEROP = /run/WSL/10867_interop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -133,7 +133,7 @@ _ = /mnt/c/Users/12459/AppData/Local/Programs/Microsoft VS Code/bin/code
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-0df7c2ed-8885-42ee-83ad-9f844a28e1be.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-ce824e77-df9d-477d-99ec-e8a981820c74.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -161,9 +161,9 @@ WSL_DISTRO_NAME = Ubuntu-22.04
 
 # Directories
 
-# . (device 2080, inode 42680): 44 files, no impossibilities.
+# . (device 2080, inode 129577): 10 files, no impossibilities.
 
-# 44 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -239,12 +239,12 @@ all:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 764 B / avg = 15 B
-# current buf: size = 8162 B / used = 764 B / count = 50 / avg = 15 B
+# strcache buffers: 1 (0) / strings = 16 / storage = 139 B / avg = 8 B
+# current buf: size = 8162 B / used = 139 B / count = 16 / avg = 8 B
 
-# strcache performance: lookups = 58 / hit rate = 13%
+# strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=0/58=0%
-# Finished Make data base on Wed Aug  3 13:11:06 2022
+# Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
+# Finished Make data base on Wed Aug  3 17:02:49 2022
 
  

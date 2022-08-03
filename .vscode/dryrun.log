@@ -1,10 +1,10 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/hikari/SuperString'
+make: Entering directory '/home/hikari/gtest-test-experiment'
 g++ -o test.o -fprofile-arcs -ftest-coverage -lgtest -pthread -c test.cpp
 g++ -o test test.o -lgtest -pthread -fprofile-arcs -ftest-coverage
 ./test
 gcov -b test.cpp
 lcov -c -d . -o test.info
 genhtml test.info -o ./output
-make: Leaving directory '/home/hikari/SuperString'
+make: Leaving directory '/home/hikari/gtest-test-experiment'
  
