@@ -128,21 +128,24 @@ SuperString SuperString::trim() const {
     if(this->_sequence != NULL) {
         return this->_sequence->trim();
     }
-    return *this;
+    return SuperString(); // FIXME: 将原本的空指针解引用导致段错误，修改为返回空对象  by Hikari
+    // return *this;
 }
 
 SuperString SuperString::trimLeft() const {
     if(this->_sequence != NULL) {
         return this->_sequence->trimLeft();
     }
-    return *this;
+    return SuperString(); // FIXME: 将原本的空指针解引用导致段错误，修改为返回空对象  by Hikari
+    // return *this;
 }
 
 SuperString SuperString::trimRight() const {
     if(this->_sequence != NULL) {
         return this->_sequence->trimRight();
     }
-    return *this;
+    return SuperString(); // FIXME: 将原本的空指针解引用导致段错误，修改为返回空对象  by Hikari
+    // return *this;
 }
 
 // TODO: delete this two methods
