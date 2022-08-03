@@ -36,5 +36,5 @@
 *.gcno
 *.gcda
 *.info
-*.gcov
-./output
+# *.gcov
+# ./output
