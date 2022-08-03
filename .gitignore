@@ -30,9 +30,11 @@
 *.exe
 *.out
 *.app
+./test
 
 # analysis files
 *.gcno
 *.gcda
 *.info
 *.gcov
+./output
