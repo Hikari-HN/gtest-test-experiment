@@ -32,16 +32,16 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntry">33</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-08-03 18:26:54</td>
+            <td class="headerValue">2022-08-12 21:32:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">49</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -509,12 +509,12 @@
 <a name="447"><span class="lineNum">     447 </span>            : // Overloads for various char types.</a>
 <a name="448"><span class="lineNum">     448 </span>            : GTEST_API_ void PrintTo(unsigned char c, ::std::ostream* os);</a>
 <a name="449"><span class="lineNum">     449 </span>            : GTEST_API_ void PrintTo(signed char c, ::std::ostream* os);</a>
-<a name="450"><span class="lineNum">     450 </span>            : inline void PrintTo(char c, ::std::ostream* os) {</a>
+<a name="450"><span class="lineNum">     450 </span><span class="lineNoCov">          0 : inline void PrintTo(char c, ::std::ostream* os) {</span></a>
 <a name="451"><span class="lineNum">     451 </span>            :   // When printing a plain char, we always treat it as unsigned.  This</a>
 <a name="452"><span class="lineNum">     452 </span>            :   // way, the output won't be affected by whether the compiler thinks</a>
 <a name="453"><span class="lineNum">     453 </span>            :   // char is signed or not.</a>
-<a name="454"><span class="lineNum">     454 </span>            :   PrintTo(static_cast&lt;unsigned char&gt;(c), os);</a>
-<a name="455"><span class="lineNum">     455 </span>            : }</a>
+<a name="454"><span class="lineNum">     454 </span><span class="lineNoCov">          0 :   PrintTo(static_cast&lt;unsigned char&gt;(c), os);</span></a>
+<a name="455"><span class="lineNum">     455 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="456"><span class="lineNum">     456 </span>            : </a>
 <a name="457"><span class="lineNum">     457 </span>            : // Overloads for other simple built-in types.</a>
 <a name="458"><span class="lineNum">     458 </span><span class="lineNoCov">          0 : inline void PrintTo(bool x, ::std::ostream* os) {</span></a>

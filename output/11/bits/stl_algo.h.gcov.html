@@ -31,18 +31,18 @@
             <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">7</td>
             <td class="headerCovTableEntry">8</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryMed">87.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-08-03 18:26:54</td>
+            <td class="headerValue">2022-08-12 21:32:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">4</td>
             <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryLo">66.7 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -782,9 +782,9 @@
 <a name="720"><span class="lineNum">     720 </span>            :            typename _OutputIterator&gt;</a>
 <a name="721"><span class="lineNum">     721 </span>            :     _GLIBCXX20_CONSTEXPR</a>
 <a name="722"><span class="lineNum">     722 </span>            :     inline _OutputIterator</a>
-<a name="723"><span class="lineNum">     723 </span><span class="lineNoCov">          0 :     __copy_n(_RandomAccessIterator __first, _Size __n,</span></a>
+<a name="723"><span class="lineNum">     723 </span><span class="lineCov">          6 :     __copy_n(_RandomAccessIterator __first, _Size __n,</span></a>
 <a name="724"><span class="lineNum">     724 </span>            :              _OutputIterator __result, random_access_iterator_tag)</a>
-<a name="725"><span class="lineNum">     725 </span><span class="lineNoCov">          0 :     { return std::copy(__first, __first + __n, __result); }</span></a>
+<a name="725"><span class="lineNum">     725 </span><span class="lineCov">          6 :     { return std::copy(__first, __first + __n, __result); }</span></a>
 <a name="726"><span class="lineNum">     726 </span>            : </a>
 <a name="727"><span class="lineNum">     727 </span>            :   /**</a>
 <a name="728"><span class="lineNum">     728 </span>            :    *  @brief Copies the range [first,first+n) into [result,result+n).</a>
@@ -802,22 +802,22 @@
 <a name="740"><span class="lineNum">     740 </span>            :   template&lt;typename _InputIterator, typename _Size, typename _OutputIterator&gt;</a>
 <a name="741"><span class="lineNum">     741 </span>            :     _GLIBCXX20_CONSTEXPR</a>
 <a name="742"><span class="lineNum">     742 </span>            :     inline _OutputIterator</a>
-<a name="743"><span class="lineNum">     743 </span><span class="lineNoCov">          0 :     copy_n(_InputIterator __first, _Size __n, _OutputIterator __result)</span></a>
+<a name="743"><span class="lineNum">     743 </span><span class="lineCov">          6 :     copy_n(_InputIterator __first, _Size __n, _OutputIterator __result)</span></a>
 <a name="744"><span class="lineNum">     744 </span>            :     {</a>
 <a name="745"><span class="lineNum">     745 </span>            :       // concept requirements</a>
 <a name="746"><span class="lineNum">     746 </span>            :       __glibcxx_function_requires(_InputIteratorConcept&lt;_InputIterator&gt;)</a>
 <a name="747"><span class="lineNum">     747 </span>            :       __glibcxx_function_requires(_OutputIteratorConcept&lt;_OutputIterator,</a>
 <a name="748"><span class="lineNum">     748 </span>            :             typename iterator_traits&lt;_InputIterator&gt;::value_type&gt;)</a>
 <a name="749"><span class="lineNum">     749 </span>            : </a>
-<a name="750"><span class="lineNum">     750 </span><span class="lineNoCov">          0 :       const auto __n2 = std::__size_to_integer(__n);</span></a>
-<a name="751"><span class="lineNum">     751 </span><span class="lineNoCov">          0 :       if (__n2 &lt;= 0)</span></a>
+<a name="750"><span class="lineNum">     750 </span><span class="lineCov">          6 :       const auto __n2 = std::__size_to_integer(__n);</span></a>
+<a name="751"><span class="lineNum">     751 </span><span class="lineCov">          6 :       if (__n2 &lt;= 0)</span></a>
 <a name="752"><span class="lineNum">     752 </span><span class="lineNoCov">          0 :         return __result;</span></a>
 <a name="753"><span class="lineNum">     753 </span>            : </a>
 <a name="754"><span class="lineNum">     754 </span>            :       __glibcxx_requires_can_increment(__first, __n2);</a>
 <a name="755"><span class="lineNum">     755 </span>            :       __glibcxx_requires_can_increment(__result, __n2);</a>
 <a name="756"><span class="lineNum">     756 </span>            : </a>
-<a name="757"><span class="lineNum">     757 </span><span class="lineNoCov">          0 :       return std::__copy_n(__first, __n2, __result,</span></a>
-<a name="758"><span class="lineNum">     758 </span><span class="lineNoCov">          0 :                            std::__iterator_category(__first));</span></a>
+<a name="757"><span class="lineNum">     757 </span><span class="lineCov">          6 :       return std::__copy_n(__first, __n2, __result,</span></a>
+<a name="758"><span class="lineNum">     758 </span><span class="lineCov">         12 :                            std::__iterator_category(__first));</span></a>
 <a name="759"><span class="lineNum">     759 </span>            :     }</a>
 <a name="760"><span class="lineNum">     760 </span>            : </a>
 <a name="761"><span class="lineNum">     761 </span>            :   /**</a>

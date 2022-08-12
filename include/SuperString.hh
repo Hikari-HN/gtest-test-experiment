@@ -130,6 +130,11 @@ public:
      */
     ~SuperString();
 
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testrefRelease_case0() const;
+
     //*- Getters
 
     /**
@@ -141,6 +146,26 @@ public:
      * Returns true if this string is not empty.
      */
     bool isNotEmpty() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool isSequenceEmpty() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool isSequenceNotEmpty() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testfreeingCost_notnull() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testbad_substringMatches() const;
 
     /**
      * Returns the length of this string.

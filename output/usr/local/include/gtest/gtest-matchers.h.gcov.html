@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-08-03 18:22:41</td>
+            <td class="headerValue">2022-08-12 14:02:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -174,7 +174,7 @@
 <a name="112"><span class="lineNum">     112 </span>            : // matcher.</a>
 <a name="113"><span class="lineNum">     113 </span>            : class GTEST_API_ MatcherDescriberInterface {</a>
 <a name="114"><span class="lineNum">     114 </span>            :  public:</a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">         21 :   virtual ~MatcherDescriberInterface() {}</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          7 :   virtual ~MatcherDescriberInterface() {}</span></a>
 <a name="116"><span class="lineNum">     116 </span>            : </a>
 <a name="117"><span class="lineNum">     117 </span>            :   // Describes this matcher to an ostream.  The function should print</a>
 <a name="118"><span class="lineNum">     118 </span>            :   // a verb phrase that describes the property a value matching this</a>
@@ -304,17 +304,17 @@
 <a name="242"><span class="lineNum">     242 </span>            : struct SharedPayloadBase {</a>
 <a name="243"><span class="lineNum">     243 </span>            :   std::atomic&lt;int&gt; ref{1};</a>
 <a name="244"><span class="lineNum">     244 </span>            :   void Ref() { ref.fetch_add(1, std::memory_order_relaxed); }</a>
-<a name="245"><span class="lineNum">     245 </span><span class="lineCov">          6 :   bool Unref() { return ref.fetch_sub(1, std::memory_order_acq_rel) == 1; }</span></a>
+<a name="245"><span class="lineNum">     245 </span><span class="lineCov">          2 :   bool Unref() { return ref.fetch_sub(1, std::memory_order_acq_rel) == 1; }</span></a>
 <a name="246"><span class="lineNum">     246 </span>            : };</a>
 <a name="247"><span class="lineNum">     247 </span>            : </a>
 <a name="248"><span class="lineNum">     248 </span>            : template &lt;typename T&gt;</a>
 <a name="249"><span class="lineNum">     249 </span>            : struct SharedPayload : SharedPayloadBase {</a>
 <a name="250"><span class="lineNum">     250 </span>            :   explicit SharedPayload(const T&amp; v) : value(v) {}</a>
-<a name="251"><span class="lineNum">     251 </span><span class="lineCov">          3 :   explicit SharedPayload(T&amp;&amp; v) : value(std::move(v)) {}</span></a>
+<a name="251"><span class="lineNum">     251 </span><span class="lineCov">          1 :   explicit SharedPayload(T&amp;&amp; v) : value(std::move(v)) {}</span></a>
 <a name="252"><span class="lineNum">     252 </span>            : </a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">          3 :   static void Destroy(SharedPayloadBase* shared) {</span></a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">          3 :     delete static_cast&lt;SharedPayload*&gt;(shared);</span></a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">          3 :   }</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">          1 :   static void Destroy(SharedPayloadBase* shared) {</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">          1 :     delete static_cast&lt;SharedPayload*&gt;(shared);</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">          1 :   }</span></a>
 <a name="256"><span class="lineNum">     256 </span>            : </a>
 <a name="257"><span class="lineNum">     257 </span>            :   T value;</a>
 <a name="258"><span class="lineNum">     258 </span>            : };</a>
@@ -369,10 +369,10 @@
 <a name="307"><span class="lineNum">     307 </span>            : </a>
 <a name="308"><span class="lineNum">     308 </span>            :   // Constructs a matcher from its implementation.</a>
 <a name="309"><span class="lineNum">     309 </span>            :   template &lt;typename U&gt;</a>
-<a name="310"><span class="lineNum">     310 </span><span class="lineCov">          3 :   explicit MatcherBase(const MatcherInterface&lt;U&gt;* impl)</span></a>
-<a name="311"><span class="lineNum">     311 </span><span class="lineCov">          3 :       : vtable_(nullptr), buffer_() {</span></a>
-<a name="312"><span class="lineNum">     312 </span><span class="lineCov">          3 :     Init(impl);</span></a>
-<a name="313"><span class="lineNum">     313 </span><span class="lineCov">          3 :   }</span></a>
+<a name="310"><span class="lineNum">     310 </span><span class="lineCov">          1 :   explicit MatcherBase(const MatcherInterface&lt;U&gt;* impl)</span></a>
+<a name="311"><span class="lineNum">     311 </span><span class="lineCov">          1 :       : vtable_(nullptr), buffer_() {</span></a>
+<a name="312"><span class="lineNum">     312 </span><span class="lineCov">          1 :     Init(impl);</span></a>
+<a name="313"><span class="lineNum">     313 </span><span class="lineCov">          1 :   }</span></a>
 <a name="314"><span class="lineNum">     314 </span>            : </a>
 <a name="315"><span class="lineNum">     315 </span>            :   template &lt;typename M, typename = typename std::remove_reference&lt;</a>
 <a name="316"><span class="lineNum">     316 </span>            :                             M&gt;::type::is_gtest_matcher&gt;</a>
@@ -408,7 +408,7 @@
 <a name="346"><span class="lineNum">     346 </span>            :     return *this;</a>
 <a name="347"><span class="lineNum">     347 </span>            :   }</a>
 <a name="348"><span class="lineNum">     348 </span>            : </a>
-<a name="349"><span class="lineNum">     349 </span><span class="lineCov">         18 :   ~MatcherBase() override { Destroy(); }</span></a>
+<a name="349"><span class="lineNum">     349 </span><span class="lineCov">          6 :   ~MatcherBase() override { Destroy(); }</span></a>
 <a name="350"><span class="lineNum">     350 </span>            : </a>
 <a name="351"><span class="lineNum">     351 </span>            :  private:</a>
 <a name="352"><span class="lineNum">     352 </span>            :   struct VTable {</a>
@@ -422,8 +422,8 @@
 <a name="360"><span class="lineNum">     360 </span>            :     void (*shared_destroy)(SharedPayloadBase*);</a>
 <a name="361"><span class="lineNum">     361 </span>            :   };</a>
 <a name="362"><span class="lineNum">     362 </span>            : </a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">         18 :   bool IsShared() const {</span></a>
-<a name="364"><span class="lineNum">     364 </span><span class="lineCov">         18 :     return vtable_ != nullptr &amp;&amp; vtable_-&gt;shared_destroy != nullptr;</span></a>
+<a name="363"><span class="lineNum">     363 </span><span class="lineCov">          6 :   bool IsShared() const {</span></a>
+<a name="364"><span class="lineNum">     364 </span><span class="lineCov">          6 :     return vtable_ != nullptr &amp;&amp; vtable_-&gt;shared_destroy != nullptr;</span></a>
 <a name="365"><span class="lineNum">     365 </span>            :   }</a>
 <a name="366"><span class="lineNum">     366 </span>            : </a>
 <a name="367"><span class="lineNum">     367 </span>            :   // If the implementation uses a listener, call that.</a>
@@ -435,10 +435,10 @@
 <a name="373"><span class="lineNum">     373 </span>            :   }</a>
 <a name="374"><span class="lineNum">     374 </span>            : </a>
 <a name="375"><span class="lineNum">     375 </span>            :   template &lt;typename P&gt;</a>
-<a name="376"><span class="lineNum">     376 </span><span class="lineCov">          3 :   static auto MatchAndExplainImpl(const MatcherBase&amp; m, const T&amp; value,</span></a>
+<a name="376"><span class="lineNum">     376 </span><span class="lineCov">          1 :   static auto MatchAndExplainImpl(const MatcherBase&amp; m, const T&amp; value,</span></a>
 <a name="377"><span class="lineNum">     377 </span>            :                                   MatchResultListener* listener)</a>
 <a name="378"><span class="lineNum">     378 </span>            :       -&gt; decltype(P::Get(m).MatchAndExplain(value, listener)) {</a>
-<a name="379"><span class="lineNum">     379 </span><span class="lineCov">          3 :     return P::Get(m).MatchAndExplain(value, listener);</span></a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineCov">          1 :     return P::Get(m).MatchAndExplain(value, listener);</span></a>
 <a name="380"><span class="lineNum">     380 </span>            :   }</a>
 <a name="381"><span class="lineNum">     381 </span>            : </a>
 <a name="382"><span class="lineNum">     382 </span>            :   template &lt;typename P&gt;</a>
@@ -468,11 +468,11 @@
 <a name="406"><span class="lineNum">     406 </span>            :   }</a>
 <a name="407"><span class="lineNum">     407 </span>            : </a>
 <a name="408"><span class="lineNum">     408 </span>            :   template &lt;typename P&gt;</a>
-<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          3 :   const VTable* GetVTable() {</span></a>
+<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          1 :   const VTable* GetVTable() {</span></a>
 <a name="410"><span class="lineNum">     410 </span>            :     static constexpr VTable kVTable = {&amp;MatchAndExplainImpl&lt;P&gt;,</a>
 <a name="411"><span class="lineNum">     411 </span>            :                                        &amp;DescribeImpl&lt;P&gt;, &amp;GetDescriberImpl&lt;P&gt;,</a>
 <a name="412"><span class="lineNum">     412 </span>            :                                        P::shared_destroy};</a>
-<a name="413"><span class="lineNum">     413 </span><span class="lineCov">          3 :     return &amp;kVTable;</span></a>
+<a name="413"><span class="lineNum">     413 </span><span class="lineCov">          1 :     return &amp;kVTable;</span></a>
 <a name="414"><span class="lineNum">     414 </span>            :   }</a>
 <a name="415"><span class="lineNum">     415 </span>            : </a>
 <a name="416"><span class="lineNum">     416 </span>            :   union Buffer {</a>
@@ -484,11 +484,11 @@
 <a name="422"><span class="lineNum">     422 </span>            :     SharedPayloadBase* shared;</a>
 <a name="423"><span class="lineNum">     423 </span>            :   };</a>
 <a name="424"><span class="lineNum">     424 </span>            : </a>
-<a name="425"><span class="lineNum">     425 </span><span class="lineCov">         18 :   void Destroy() {</span></a>
-<a name="426"><span class="lineNum">     426 </span><span class="lineCov">         18 :     if (IsShared() &amp;&amp; buffer_.shared-&gt;Unref()) {</span></a>
-<a name="427"><span class="lineNum">     427 </span><span class="lineCov">          3 :       vtable_-&gt;shared_destroy(buffer_.shared);</span></a>
+<a name="425"><span class="lineNum">     425 </span><span class="lineCov">          6 :   void Destroy() {</span></a>
+<a name="426"><span class="lineNum">     426 </span><span class="lineCov">          6 :     if (IsShared() &amp;&amp; buffer_.shared-&gt;Unref()) {</span></a>
+<a name="427"><span class="lineNum">     427 </span><span class="lineCov">          1 :       vtable_-&gt;shared_destroy(buffer_.shared);</span></a>
 <a name="428"><span class="lineNum">     428 </span>            :     }</a>
-<a name="429"><span class="lineNum">     429 </span><span class="lineCov">         18 :   }</span></a>
+<a name="429"><span class="lineNum">     429 </span><span class="lineCov">          6 :   }</span></a>
 <a name="430"><span class="lineNum">     430 </span>            : </a>
 <a name="431"><span class="lineNum">     431 </span>            :   template &lt;typename M&gt;</a>
 <a name="432"><span class="lineNum">     432 </span>            :   static constexpr bool IsInlined() {</a>
@@ -529,23 +529,23 @@
 <a name="467"><span class="lineNum">     467 </span>            :   struct ValuePolicy&lt;const MatcherInterface&lt;U&gt;*, B&gt; {</a>
 <a name="468"><span class="lineNum">     468 </span>            :     using M = const MatcherInterface&lt;U&gt;;</a>
 <a name="469"><span class="lineNum">     469 </span>            :     using Shared = SharedPayload&lt;std::unique_ptr&lt;M&gt;&gt;;</a>
-<a name="470"><span class="lineNum">     470 </span><span class="lineCov">          3 :     static const M&amp; Get(const MatcherBase&amp; m) {</span></a>
-<a name="471"><span class="lineNum">     471 </span><span class="lineCov">          3 :       return *static_cast&lt;Shared*&gt;(m.buffer_.shared)-&gt;value;</span></a>
+<a name="470"><span class="lineNum">     470 </span><span class="lineCov">          1 :     static const M&amp; Get(const MatcherBase&amp; m) {</span></a>
+<a name="471"><span class="lineNum">     471 </span><span class="lineCov">          1 :       return *static_cast&lt;Shared*&gt;(m.buffer_.shared)-&gt;value;</span></a>
 <a name="472"><span class="lineNum">     472 </span>            :     }</a>
-<a name="473"><span class="lineNum">     473 </span><span class="lineCov">          3 :     static void Init(MatcherBase&amp; m, M* impl) {</span></a>
-<a name="474"><span class="lineNum">     474 </span><span class="lineCov">          3 :       m.buffer_.shared = new Shared(std::unique_ptr&lt;M&gt;(impl));</span></a>
-<a name="475"><span class="lineNum">     475 </span><span class="lineCov">          3 :     }</span></a>
+<a name="473"><span class="lineNum">     473 </span><span class="lineCov">          1 :     static void Init(MatcherBase&amp; m, M* impl) {</span></a>
+<a name="474"><span class="lineNum">     474 </span><span class="lineCov">          1 :       m.buffer_.shared = new Shared(std::unique_ptr&lt;M&gt;(impl));</span></a>
+<a name="475"><span class="lineNum">     475 </span><span class="lineCov">          1 :     }</span></a>
 <a name="476"><span class="lineNum">     476 </span>            : </a>
 <a name="477"><span class="lineNum">     477 </span>            :     static constexpr auto shared_destroy = &amp;Shared::Destroy;</a>
 <a name="478"><span class="lineNum">     478 </span>            :   };</a>
 <a name="479"><span class="lineNum">     479 </span>            : </a>
 <a name="480"><span class="lineNum">     480 </span>            :   template &lt;typename M&gt;</a>
-<a name="481"><span class="lineNum">     481 </span><span class="lineCov">          3 :   void Init(M&amp;&amp; m) {</span></a>
+<a name="481"><span class="lineNum">     481 </span><span class="lineCov">          1 :   void Init(M&amp;&amp; m) {</span></a>
 <a name="482"><span class="lineNum">     482 </span>            :     using MM = typename std::decay&lt;M&gt;::type;</a>
 <a name="483"><span class="lineNum">     483 </span>            :     using Policy = ValuePolicy&lt;MM&gt;;</a>
-<a name="484"><span class="lineNum">     484 </span><span class="lineCov">          3 :     vtable_ = GetVTable&lt;Policy&gt;();</span></a>
-<a name="485"><span class="lineNum">     485 </span><span class="lineCov">          3 :     Policy::Init(*this, std::forward&lt;M&gt;(m));</span></a>
-<a name="486"><span class="lineNum">     486 </span><span class="lineCov">          3 :   }</span></a>
+<a name="484"><span class="lineNum">     484 </span><span class="lineCov">          1 :     vtable_ = GetVTable&lt;Policy&gt;();</span></a>
+<a name="485"><span class="lineNum">     485 </span><span class="lineCov">          1 :     Policy::Init(*this, std::forward&lt;M&gt;(m));</span></a>
+<a name="486"><span class="lineNum">     486 </span><span class="lineCov">          1 :   }</span></a>
 <a name="487"><span class="lineNum">     487 </span>            : </a>
 <a name="488"><span class="lineNum">     488 </span>            :   const VTable* vtable_;</a>
 <a name="489"><span class="lineNum">     489 </span>            :   Buffer buffer_;</a>
@@ -594,8 +594,8 @@
 <a name="532"><span class="lineNum">     532 </span>            :  public:</a>
 <a name="533"><span class="lineNum">     533 </span>            :   Matcher() {}</a>
 <a name="534"><span class="lineNum">     534 </span>            : </a>
-<a name="535"><span class="lineNum">     535 </span><span class="lineCov">          3 :   explicit Matcher(const MatcherInterface&lt;const std::string&amp;&gt;* impl)</span></a>
-<a name="536"><span class="lineNum">     536 </span><span class="lineCov">          3 :       : internal::MatcherBase&lt;const std::string&amp;&gt;(impl) {}</span></a>
+<a name="535"><span class="lineNum">     535 </span><span class="lineCov">          1 :   explicit Matcher(const MatcherInterface&lt;const std::string&amp;&gt;* impl)</span></a>
+<a name="536"><span class="lineNum">     536 </span><span class="lineCov">          1 :       : internal::MatcherBase&lt;const std::string&amp;&gt;(impl) {}</span></a>
 <a name="537"><span class="lineNum">     537 </span>            : </a>
 <a name="538"><span class="lineNum">     538 </span>            :   template &lt;typename M, typename = typename std::remove_reference&lt;</a>
 <a name="539"><span class="lineNum">     539 </span>            :                             M&gt;::type::is_gtest_matcher&gt;</a>
@@ -714,7 +714,7 @@
 <a name="652"><span class="lineNum">     652 </span>            : template &lt;class Impl&gt;</a>
 <a name="653"><span class="lineNum">     653 </span>            : class PolymorphicMatcher {</a>
 <a name="654"><span class="lineNum">     654 </span>            :  public:</a>
-<a name="655"><span class="lineNum">     655 </span><span class="lineCov">          3 :   explicit PolymorphicMatcher(const Impl&amp; an_impl) : impl_(an_impl) {}</span></a>
+<a name="655"><span class="lineNum">     655 </span><span class="lineCov">          1 :   explicit PolymorphicMatcher(const Impl&amp; an_impl) : impl_(an_impl) {}</span></a>
 <a name="656"><span class="lineNum">     656 </span>            : </a>
 <a name="657"><span class="lineNum">     657 </span>            :   // Returns a mutable reference to the underlying matcher</a>
 <a name="658"><span class="lineNum">     658 </span>            :   // implementation object.</a>
@@ -725,15 +725,15 @@
 <a name="663"><span class="lineNum">     663 </span>            :   const Impl&amp; impl() const { return impl_; }</a>
 <a name="664"><span class="lineNum">     664 </span>            : </a>
 <a name="665"><span class="lineNum">     665 </span>            :   template &lt;typename T&gt;</a>
-<a name="666"><span class="lineNum">     666 </span><span class="lineCov">          3 :   operator Matcher&lt;T&gt;() const {</span></a>
-<a name="667"><span class="lineNum">     667 </span><span class="lineCov">          3 :     return Matcher&lt;T&gt;(new MonomorphicImpl&lt;const T&amp;&gt;(impl_));</span></a>
+<a name="666"><span class="lineNum">     666 </span><span class="lineCov">          1 :   operator Matcher&lt;T&gt;() const {</span></a>
+<a name="667"><span class="lineNum">     667 </span><span class="lineCov">          1 :     return Matcher&lt;T&gt;(new MonomorphicImpl&lt;const T&amp;&gt;(impl_));</span></a>
 <a name="668"><span class="lineNum">     668 </span>            :   }</a>
 <a name="669"><span class="lineNum">     669 </span>            : </a>
 <a name="670"><span class="lineNum">     670 </span>            :  private:</a>
 <a name="671"><span class="lineNum">     671 </span>            :   template &lt;typename T&gt;</a>
 <a name="672"><span class="lineNum">     672 </span>            :   class MonomorphicImpl : public MatcherInterface&lt;T&gt; {</a>
 <a name="673"><span class="lineNum">     673 </span>            :    public:</a>
-<a name="674"><span class="lineNum">     674 </span><span class="lineCov">          3 :     explicit MonomorphicImpl(const Impl&amp; impl) : impl_(impl) {}</span></a>
+<a name="674"><span class="lineNum">     674 </span><span class="lineCov">          1 :     explicit MonomorphicImpl(const Impl&amp; impl) : impl_(impl) {}</span></a>
 <a name="675"><span class="lineNum">     675 </span>            : </a>
 <a name="676"><span class="lineNum">     676 </span><span class="lineNoCov">          0 :     void DescribeTo(::std::ostream* os) const override { impl_.DescribeTo(os); }</span></a>
 <a name="677"><span class="lineNum">     677 </span>            : </a>
@@ -741,8 +741,8 @@
 <a name="679"><span class="lineNum">     679 </span><span class="lineNoCov">          0 :       impl_.DescribeNegationTo(os);</span></a>
 <a name="680"><span class="lineNum">     680 </span><span class="lineNoCov">          0 :     }</span></a>
 <a name="681"><span class="lineNum">     681 </span>            : </a>
-<a name="682"><span class="lineNum">     682 </span><span class="lineCov">          3 :     bool MatchAndExplain(T x, MatchResultListener* listener) const override {</span></a>
-<a name="683"><span class="lineNum">     683 </span><span class="lineCov">          3 :       return impl_.MatchAndExplain(x, listener);</span></a>
+<a name="682"><span class="lineNum">     682 </span><span class="lineCov">          1 :     bool MatchAndExplain(T x, MatchResultListener* listener) const override {</span></a>
+<a name="683"><span class="lineNum">     683 </span><span class="lineCov">          1 :       return impl_.MatchAndExplain(x, listener);</span></a>
 <a name="684"><span class="lineNum">     684 </span>            :     }</a>
 <a name="685"><span class="lineNum">     685 </span>            : </a>
 <a name="686"><span class="lineNum">     686 </span>            :    private:</a>
@@ -771,8 +771,8 @@
 <a name="709"><span class="lineNum">     709 </span>            : // vs</a>
 <a name="710"><span class="lineNum">     710 </span>            : //   PolymorphicMatcher&lt;TypeOfFoo&gt;(foo);</a>
 <a name="711"><span class="lineNum">     711 </span>            : template &lt;class Impl&gt;</a>
-<a name="712"><span class="lineNum">     712 </span><span class="lineCov">          3 : inline PolymorphicMatcher&lt;Impl&gt; MakePolymorphicMatcher(const Impl&amp; impl) {</span></a>
-<a name="713"><span class="lineNum">     713 </span><span class="lineCov">          3 :   return PolymorphicMatcher&lt;Impl&gt;(impl);</span></a>
+<a name="712"><span class="lineNum">     712 </span><span class="lineCov">          1 : inline PolymorphicMatcher&lt;Impl&gt; MakePolymorphicMatcher(const Impl&amp; impl) {</span></a>
+<a name="713"><span class="lineNum">     713 </span><span class="lineCov">          1 :   return PolymorphicMatcher&lt;Impl&gt;(impl);</span></a>
 <a name="714"><span class="lineNum">     714 </span>            : }</a>
 <a name="715"><span class="lineNum">     715 </span>            : </a>
 <a name="716"><span class="lineNum">     716 </span>            : namespace internal {</a>
@@ -877,8 +877,8 @@
 <a name="815"><span class="lineNum">     815 </span>            : // T can be converted to a string.</a>
 <a name="816"><span class="lineNum">     816 </span>            : class MatchesRegexMatcher {</a>
 <a name="817"><span class="lineNum">     817 </span>            :  public:</a>
-<a name="818"><span class="lineNum">     818 </span><span class="lineCov">          3 :   MatchesRegexMatcher(const RE* regex, bool full_match)</span></a>
-<a name="819"><span class="lineNum">     819 </span><span class="lineCov">          3 :       : regex_(regex), full_match_(full_match) {}</span></a>
+<a name="818"><span class="lineNum">     818 </span><span class="lineCov">          1 :   MatchesRegexMatcher(const RE* regex, bool full_match)</span></a>
+<a name="819"><span class="lineNum">     819 </span><span class="lineCov">          1 :       : regex_(regex), full_match_(full_match) {}</span></a>
 <a name="820"><span class="lineNum">     820 </span>            : </a>
 <a name="821"><span class="lineNum">     821 </span>            : #if GTEST_INTERNAL_HAS_STRING_VIEW</a>
 <a name="822"><span class="lineNum">     822 </span>            :   bool MatchAndExplain(const internal::StringView&amp; s,</a>
@@ -902,11 +902,11 @@
 <a name="840"><span class="lineNum">     840 </span>            :   // This is a template, not just a plain function with const std::string&amp;,</a>
 <a name="841"><span class="lineNum">     841 </span>            :   // because absl::string_view has some interfering non-explicit constructors.</a>
 <a name="842"><span class="lineNum">     842 </span>            :   template &lt;class MatcheeStringType&gt;</a>
-<a name="843"><span class="lineNum">     843 </span><span class="lineCov">          3 :   bool MatchAndExplain(const MatcheeStringType&amp; s,</span></a>
+<a name="843"><span class="lineNum">     843 </span><span class="lineCov">          1 :   bool MatchAndExplain(const MatcheeStringType&amp; s,</span></a>
 <a name="844"><span class="lineNum">     844 </span>            :                        MatchResultListener* /* listener */) const {</a>
-<a name="845"><span class="lineNum">     845 </span><span class="lineCov">          3 :     const std::string&amp; s2(s);</span></a>
-<a name="846"><span class="lineNum">     846 </span><span class="lineCov">          3 :     return full_match_ ? RE::FullMatch(s2, *regex_)</span></a>
-<a name="847"><span class="lineNum">     847 </span><span class="lineCov">          3 :                        : RE::PartialMatch(s2, *regex_);</span></a>
+<a name="845"><span class="lineNum">     845 </span><span class="lineCov">          1 :     const std::string&amp; s2(s);</span></a>
+<a name="846"><span class="lineNum">     846 </span><span class="lineCov">          1 :     return full_match_ ? RE::FullMatch(s2, *regex_)</span></a>
+<a name="847"><span class="lineNum">     847 </span><span class="lineCov">          1 :                        : RE::PartialMatch(s2, *regex_);</span></a>
 <a name="848"><span class="lineNum">     848 </span>            :   }</a>
 <a name="849"><span class="lineNum">     849 </span>            : </a>
 <a name="850"><span class="lineNum">     850 </span><span class="lineNoCov">          0 :   void DescribeTo(::std::ostream* os) const {</span></a>
@@ -940,14 +940,14 @@
 <a name="878"><span class="lineNum">     878 </span>            : </a>
 <a name="879"><span class="lineNum">     879 </span>            : // Matches a string that contains regular expression 'regex'.</a>
 <a name="880"><span class="lineNum">     880 </span>            : // The matcher takes ownership of 'regex'.</a>
-<a name="881"><span class="lineNum">     881 </span><span class="lineCov">          3 : inline PolymorphicMatcher&lt;internal::MatchesRegexMatcher&gt; ContainsRegex(</span></a>
+<a name="881"><span class="lineNum">     881 </span><span class="lineCov">          1 : inline PolymorphicMatcher&lt;internal::MatchesRegexMatcher&gt; ContainsRegex(</span></a>
 <a name="882"><span class="lineNum">     882 </span>            :     const internal::RE* regex) {</a>
-<a name="883"><span class="lineNum">     883 </span><span class="lineCov">          6 :   return MakePolymorphicMatcher(internal::MatchesRegexMatcher(regex, false));</span></a>
+<a name="883"><span class="lineNum">     883 </span><span class="lineCov">          2 :   return MakePolymorphicMatcher(internal::MatchesRegexMatcher(regex, false));</span></a>
 <a name="884"><span class="lineNum">     884 </span>            : }</a>
 <a name="885"><span class="lineNum">     885 </span>            : template &lt;typename T = std::string&gt;</a>
-<a name="886"><span class="lineNum">     886 </span><span class="lineCov">          3 : PolymorphicMatcher&lt;internal::MatchesRegexMatcher&gt; ContainsRegex(</span></a>
+<a name="886"><span class="lineNum">     886 </span><span class="lineCov">          1 : PolymorphicMatcher&lt;internal::MatchesRegexMatcher&gt; ContainsRegex(</span></a>
 <a name="887"><span class="lineNum">     887 </span>            :     const internal::StringLike&lt;T&gt;&amp; regex) {</a>
-<a name="888"><span class="lineNum">     888 </span><span class="lineCov">          6 :   return ContainsRegex(new internal::RE(std::string(regex)));</span></a>
+<a name="888"><span class="lineNum">     888 </span><span class="lineCov">          2 :   return ContainsRegex(new internal::RE(std::string(regex)));</span></a>
 <a name="889"><span class="lineNum">     889 </span>            : }</a>
 <a name="890"><span class="lineNum">     890 </span>            : </a>
 <a name="891"><span class="lineNum">     891 </span>            : // Creates a polymorphic matcher that matches anything equal to x.</a>

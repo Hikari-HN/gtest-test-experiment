@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-08-03 18:22:41</td>
+            <td class="headerValue">2022-08-12 14:02:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -185,12 +185,12 @@
 <a name="123"><span class="lineNum">     123 </span>            :     : public _Mutex_base&lt;_Lp&gt;</a>
 <a name="124"><span class="lineNum">     124 </span>            :     {</a>
 <a name="125"><span class="lineNum">     125 </span>            :     public:</a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          3 :       _Sp_counted_base() noexcept</span></a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          3 :       : _M_use_count(1), _M_weak_count(1) { }</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          1 :       _Sp_counted_base() noexcept</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          1 :       : _M_use_count(1), _M_weak_count(1) { }</span></a>
 <a name="128"><span class="lineNum">     128 </span>            : </a>
 <a name="129"><span class="lineNum">     129 </span>            :       virtual</a>
-<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          3 :       ~_Sp_counted_base() noexcept</span></a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          3 :       { }</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          1 :       ~_Sp_counted_base() noexcept</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          1 :       { }</span></a>
 <a name="132"><span class="lineNum">     132 </span>            : </a>
 <a name="133"><span class="lineNum">     133 </span>            :       // Called when _M_use_count drops to zero, to release the resources</a>
 <a name="134"><span class="lineNum">     134 </span>            :       // managed by *this.</a>
@@ -206,8 +206,8 @@
 <a name="144"><span class="lineNum">     144 </span>            :       _M_get_deleter(const std::type_info&amp;) noexcept = 0;</a>
 <a name="145"><span class="lineNum">     145 </span>            : </a>
 <a name="146"><span class="lineNum">     146 </span>            :       void</a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          6 :       _M_add_ref_copy()</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          6 :       { __gnu_cxx::__atomic_add_dispatch(&amp;_M_use_count, 1); }</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          2 :       _M_add_ref_copy()</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          2 :       { __gnu_cxx::__atomic_add_dispatch(&amp;_M_use_count, 1); }</span></a>
 <a name="149"><span class="lineNum">     149 </span>            : </a>
 <a name="150"><span class="lineNum">     150 </span>            :       void</a>
 <a name="151"><span class="lineNum">     151 </span>            :       _M_add_ref_lock()</a>
@@ -220,14 +220,14 @@
 <a name="158"><span class="lineNum">     158 </span>            :       _M_add_ref_lock_nothrow() noexcept;</a>
 <a name="159"><span class="lineNum">     159 </span>            : </a>
 <a name="160"><span class="lineNum">     160 </span>            :       void</a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">          9 :       _M_release() noexcept</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">          3 :       _M_release() noexcept</span></a>
 <a name="162"><span class="lineNum">     162 </span>            :       {</a>
 <a name="163"><span class="lineNum">     163 </span>            :         // Be race-detector-friendly.  For more info see bits/c++config.</a>
 <a name="164"><span class="lineNum">     164 </span>            :         _GLIBCXX_SYNCHRONIZATION_HAPPENS_BEFORE(&amp;_M_use_count);</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         18 :         if (__gnu_cxx::__exchange_and_add_dispatch(&amp;_M_use_count, -1) == 1)</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">          6 :         if (__gnu_cxx::__exchange_and_add_dispatch(&amp;_M_use_count, -1) == 1)</span></a>
 <a name="166"><span class="lineNum">     166 </span>            :           {</a>
 <a name="167"><span class="lineNum">     167 </span>            :             _GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(&amp;_M_use_count);</a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">          3 :             _M_dispose();</span></a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineCov">          1 :             _M_dispose();</span></a>
 <a name="169"><span class="lineNum">     169 </span>            :             // There must be a memory barrier between dispose() and destroy()</a>
 <a name="170"><span class="lineNum">     170 </span>            :             // to ensure that the effects of dispose() are observed in the</a>
 <a name="171"><span class="lineNum">     171 </span>            :             // thread that runs destroy().</a>
@@ -239,14 +239,14 @@
 <a name="177"><span class="lineNum">     177 </span>            : </a>
 <a name="178"><span class="lineNum">     178 </span>            :             // Be race-detector-friendly.  For more info see bits/c++config.</a>
 <a name="179"><span class="lineNum">     179 </span>            :             _GLIBCXX_SYNCHRONIZATION_HAPPENS_BEFORE(&amp;_M_weak_count);</a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">          3 :             if (__gnu_cxx::__exchange_and_add_dispatch(&amp;_M_weak_count,</span></a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">          3 :                                                        -1) == 1)</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">          1 :             if (__gnu_cxx::__exchange_and_add_dispatch(&amp;_M_weak_count,</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">          1 :                                                        -1) == 1)</span></a>
 <a name="182"><span class="lineNum">     182 </span>            :               {</a>
 <a name="183"><span class="lineNum">     183 </span>            :                 _GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(&amp;_M_weak_count);</a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">          3 :                 _M_destroy();</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">          1 :                 _M_destroy();</span></a>
 <a name="185"><span class="lineNum">     185 </span>            :               }</a>
 <a name="186"><span class="lineNum">     186 </span>            :           }</a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          9 :       }</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          3 :       }</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : </a>
 <a name="189"><span class="lineNum">     189 </span>            :       void</a>
 <a name="190"><span class="lineNum">     190 </span>            :       _M_weak_add_ref() noexcept</a>
@@ -402,16 +402,16 @@
 <a name="340"><span class="lineNum">     340 </span>            :     {</a>
 <a name="341"><span class="lineNum">     341 </span>            :     public:</a>
 <a name="342"><span class="lineNum">     342 </span>            :       explicit</a>
-<a name="343"><span class="lineNum">     343 </span><span class="lineCov">          3 :       _Sp_counted_ptr(_Ptr __p) noexcept</span></a>
-<a name="344"><span class="lineNum">     344 </span><span class="lineCov">          3 :       : _M_ptr(__p) { }</span></a>
+<a name="343"><span class="lineNum">     343 </span><span class="lineCov">          1 :       _Sp_counted_ptr(_Ptr __p) noexcept</span></a>
+<a name="344"><span class="lineNum">     344 </span><span class="lineCov">          1 :       : _M_ptr(__p) { }</span></a>
 <a name="345"><span class="lineNum">     345 </span>            : </a>
 <a name="346"><span class="lineNum">     346 </span>            :       virtual void</a>
-<a name="347"><span class="lineNum">     347 </span><span class="lineCov">          3 :       _M_dispose() noexcept</span></a>
-<a name="348"><span class="lineNum">     348 </span><span class="lineCov">          3 :       { delete _M_ptr; }</span></a>
+<a name="347"><span class="lineNum">     347 </span><span class="lineCov">          1 :       _M_dispose() noexcept</span></a>
+<a name="348"><span class="lineNum">     348 </span><span class="lineCov">          1 :       { delete _M_ptr; }</span></a>
 <a name="349"><span class="lineNum">     349 </span>            : </a>
 <a name="350"><span class="lineNum">     350 </span>            :       virtual void</a>
-<a name="351"><span class="lineNum">     351 </span><span class="lineCov">          3 :       _M_destroy() noexcept</span></a>
-<a name="352"><span class="lineNum">     352 </span><span class="lineCov">          3 :       { delete this; }</span></a>
+<a name="351"><span class="lineNum">     351 </span><span class="lineCov">          1 :       _M_destroy() noexcept</span></a>
+<a name="352"><span class="lineNum">     352 </span><span class="lineCov">          1 :       { delete this; }</span></a>
 <a name="353"><span class="lineNum">     353 </span>            : </a>
 <a name="354"><span class="lineNum">     354 </span>            :       virtual void*</a>
 <a name="355"><span class="lineNum">     355 </span><span class="lineNoCov">          0 :       _M_get_deleter(const std::type_info&amp;) noexcept</span></a>
@@ -651,23 +651,23 @@
 <a name="589"><span class="lineNum">     589 </span>            : </a>
 <a name="590"><span class="lineNum">     590 </span>            :       template&lt;typename _Ptr&gt;</a>
 <a name="591"><span class="lineNum">     591 </span>            :         explicit</a>
-<a name="592"><span class="lineNum">     592 </span><span class="lineCov">          3 :         __shared_count(_Ptr __p) : _M_pi(0)</span></a>
+<a name="592"><span class="lineNum">     592 </span><span class="lineCov">          1 :         __shared_count(_Ptr __p) : _M_pi(0)</span></a>
 <a name="593"><span class="lineNum">     593 </span>            :         {</a>
 <a name="594"><span class="lineNum">     594 </span>            :           __try</a>
 <a name="595"><span class="lineNum">     595 </span>            :             {</a>
-<a name="596"><span class="lineNum">     596 </span><span class="lineCov">          3 :               _M_pi = new _Sp_counted_ptr&lt;_Ptr, _Lp&gt;(__p);</span></a>
+<a name="596"><span class="lineNum">     596 </span><span class="lineCov">          1 :               _M_pi = new _Sp_counted_ptr&lt;_Ptr, _Lp&gt;(__p);</span></a>
 <a name="597"><span class="lineNum">     597 </span>            :             }</a>
 <a name="598"><span class="lineNum">     598 </span><span class="lineNoCov">          0 :           __catch(...)</span></a>
 <a name="599"><span class="lineNum">     599 </span>            :             {</a>
 <a name="600"><span class="lineNum">     600 </span><span class="lineNoCov">          0 :               delete __p;</span></a>
 <a name="601"><span class="lineNum">     601 </span><span class="lineNoCov">          0 :               __throw_exception_again;</span></a>
 <a name="602"><span class="lineNum">     602 </span>            :             }</a>
-<a name="603"><span class="lineNum">     603 </span><span class="lineCov">          3 :         }</span></a>
+<a name="603"><span class="lineNum">     603 </span><span class="lineCov">          1 :         }</span></a>
 <a name="604"><span class="lineNum">     604 </span>            : </a>
 <a name="605"><span class="lineNum">     605 </span>            :       template&lt;typename _Ptr&gt;</a>
-<a name="606"><span class="lineNum">     606 </span><span class="lineCov">          3 :         __shared_count(_Ptr __p, /* is_array = */ false_type)</span></a>
-<a name="607"><span class="lineNum">     607 </span><span class="lineCov">          3 :         : __shared_count(__p)</span></a>
-<a name="608"><span class="lineNum">     608 </span><span class="lineCov">          3 :         { }</span></a>
+<a name="606"><span class="lineNum">     606 </span><span class="lineCov">          1 :         __shared_count(_Ptr __p, /* is_array = */ false_type)</span></a>
+<a name="607"><span class="lineNum">     607 </span><span class="lineCov">          1 :         : __shared_count(__p)</span></a>
+<a name="608"><span class="lineNum">     608 </span><span class="lineCov">          1 :         { }</span></a>
 <a name="609"><span class="lineNum">     609 </span>            : </a>
 <a name="610"><span class="lineNum">     610 </span>            :       template&lt;typename _Ptr&gt;</a>
 <a name="611"><span class="lineNum">     611 </span>            :         __shared_count(_Ptr __p, /* is_array = */ true_type)</a>
@@ -761,18 +761,18 @@
 <a name="699"><span class="lineNum">     699 </span>            :       explicit</a>
 <a name="700"><span class="lineNum">     700 </span>            :       __shared_count(const __weak_count&lt;_Lp&gt;&amp; __r, std::nothrow_t) noexcept;</a>
 <a name="701"><span class="lineNum">     701 </span>            : </a>
-<a name="702"><span class="lineNum">     702 </span><span class="lineCov">          9 :       ~__shared_count() noexcept</span></a>
+<a name="702"><span class="lineNum">     702 </span><span class="lineCov">          3 :       ~__shared_count() noexcept</span></a>
 <a name="703"><span class="lineNum">     703 </span>            :       {</a>
-<a name="704"><span class="lineNum">     704 </span><span class="lineCov">          9 :         if (_M_pi != nullptr)</span></a>
-<a name="705"><span class="lineNum">     705 </span><span class="lineCov">          9 :           _M_pi-&gt;_M_release();</span></a>
-<a name="706"><span class="lineNum">     706 </span><span class="lineCov">          9 :       }</span></a>
+<a name="704"><span class="lineNum">     704 </span><span class="lineCov">          3 :         if (_M_pi != nullptr)</span></a>
+<a name="705"><span class="lineNum">     705 </span><span class="lineCov">          3 :           _M_pi-&gt;_M_release();</span></a>
+<a name="706"><span class="lineNum">     706 </span><span class="lineCov">          3 :       }</span></a>
 <a name="707"><span class="lineNum">     707 </span>            : </a>
-<a name="708"><span class="lineNum">     708 </span><span class="lineCov">          6 :       __shared_count(const __shared_count&amp; __r) noexcept</span></a>
-<a name="709"><span class="lineNum">     709 </span><span class="lineCov">          6 :       : _M_pi(__r._M_pi)</span></a>
+<a name="708"><span class="lineNum">     708 </span><span class="lineCov">          2 :       __shared_count(const __shared_count&amp; __r) noexcept</span></a>
+<a name="709"><span class="lineNum">     709 </span><span class="lineCov">          2 :       : _M_pi(__r._M_pi)</span></a>
 <a name="710"><span class="lineNum">     710 </span>            :       {</a>
-<a name="711"><span class="lineNum">     711 </span><span class="lineCov">          6 :         if (_M_pi != nullptr)</span></a>
-<a name="712"><span class="lineNum">     712 </span><span class="lineCov">          6 :           _M_pi-&gt;_M_add_ref_copy();</span></a>
-<a name="713"><span class="lineNum">     713 </span><span class="lineCov">          6 :       }</span></a>
+<a name="711"><span class="lineNum">     711 </span><span class="lineCov">          2 :         if (_M_pi != nullptr)</span></a>
+<a name="712"><span class="lineNum">     712 </span><span class="lineCov">          2 :           _M_pi-&gt;_M_add_ref_copy();</span></a>
+<a name="713"><span class="lineNum">     713 </span><span class="lineCov">          2 :       }</span></a>
 <a name="714"><span class="lineNum">     714 </span>            : </a>
 <a name="715"><span class="lineNum">     715 </span>            :       __shared_count&amp;</a>
 <a name="716"><span class="lineNum">     716 </span>            :       operator=(const __shared_count&amp; __r) noexcept</a>
@@ -1036,10 +1036,10 @@
 <a name="974"><span class="lineNum">     974 </span>            :       using element_type = _Tp;</a>
 <a name="975"><span class="lineNum">     975 </span>            : </a>
 <a name="976"><span class="lineNum">     976 </span>            :       element_type&amp;</a>
-<a name="977"><span class="lineNum">     977 </span><span class="lineCov">          3 :       operator*() const noexcept</span></a>
+<a name="977"><span class="lineNum">     977 </span><span class="lineCov">          1 :       operator*() const noexcept</span></a>
 <a name="978"><span class="lineNum">     978 </span>            :       {</a>
-<a name="979"><span class="lineNum">     979 </span><span class="lineCov">          3 :         __glibcxx_assert(_M_get() != nullptr);</span></a>
-<a name="980"><span class="lineNum">     980 </span><span class="lineCov">          3 :         return *_M_get();</span></a>
+<a name="979"><span class="lineNum">     979 </span><span class="lineCov">          1 :         __glibcxx_assert(_M_get() != nullptr);</span></a>
+<a name="980"><span class="lineNum">     980 </span><span class="lineCov">          1 :         return *_M_get();</span></a>
 <a name="981"><span class="lineNum">     981 </span>            :       }</a>
 <a name="982"><span class="lineNum">     982 </span>            : </a>
 <a name="983"><span class="lineNum">     983 </span>            :       element_type*</a>
@@ -1051,8 +1051,8 @@
 <a name="989"><span class="lineNum">     989 </span>            : </a>
 <a name="990"><span class="lineNum">     990 </span>            :     private:</a>
 <a name="991"><span class="lineNum">     991 </span>            :       element_type*</a>
-<a name="992"><span class="lineNum">     992 </span><span class="lineCov">          3 :       _M_get() const noexcept</span></a>
-<a name="993"><span class="lineNum">     993 </span><span class="lineCov">          3 :       { return static_cast&lt;const __shared_ptr&lt;_Tp, _Lp&gt;*&gt;(this)-&gt;get(); }</span></a>
+<a name="992"><span class="lineNum">     992 </span><span class="lineCov">          1 :       _M_get() const noexcept</span></a>
+<a name="993"><span class="lineNum">     993 </span><span class="lineCov">          1 :       { return static_cast&lt;const __shared_ptr&lt;_Tp, _Lp&gt;*&gt;(this)-&gt;get(); }</span></a>
 <a name="994"><span class="lineNum">     994 </span>            :     };</a>
 <a name="995"><span class="lineNum">     995 </span>            : </a>
 <a name="996"><span class="lineNum">     996 </span>            :   // Define operator-&gt; for shared_ptr&lt;cv void&gt;.</a>
@@ -1157,13 +1157,13 @@
 <a name="1095"><span class="lineNum">    1095 </span>            : </a>
 <a name="1096"><span class="lineNum">    1096 </span>            :       template&lt;typename _Yp, typename = _SafeConv&lt;_Yp&gt;&gt;</a>
 <a name="1097"><span class="lineNum">    1097 </span>            :         explicit</a>
-<a name="1098"><span class="lineNum">    1098 </span><span class="lineCov">          3 :         __shared_ptr(_Yp* __p)</span></a>
-<a name="1099"><span class="lineNum">    1099 </span><span class="lineCov">          3 :         : _M_ptr(__p), _M_refcount(__p, typename is_array&lt;_Tp&gt;::type())</span></a>
+<a name="1098"><span class="lineNum">    1098 </span><span class="lineCov">          1 :         __shared_ptr(_Yp* __p)</span></a>
+<a name="1099"><span class="lineNum">    1099 </span><span class="lineCov">          1 :         : _M_ptr(__p), _M_refcount(__p, typename is_array&lt;_Tp&gt;::type())</span></a>
 <a name="1100"><span class="lineNum">    1100 </span>            :         {</a>
 <a name="1101"><span class="lineNum">    1101 </span>            :           static_assert( !is_void&lt;_Yp&gt;::value, &quot;incomplete type&quot; );</a>
 <a name="1102"><span class="lineNum">    1102 </span>            :           static_assert( sizeof(_Yp) &gt; 0, &quot;incomplete type&quot; );</a>
-<a name="1103"><span class="lineNum">    1103 </span><span class="lineCov">          3 :           _M_enable_shared_from_this_with(__p);</span></a>
-<a name="1104"><span class="lineNum">    1104 </span><span class="lineCov">          3 :         }</span></a>
+<a name="1103"><span class="lineNum">    1103 </span><span class="lineCov">          1 :           _M_enable_shared_from_this_with(__p);</span></a>
+<a name="1104"><span class="lineNum">    1104 </span><span class="lineCov">          1 :         }</span></a>
 <a name="1105"><span class="lineNum">    1105 </span>            : </a>
 <a name="1106"><span class="lineNum">    1106 </span>            :       template&lt;typename _Yp, typename _Deleter, typename = _SafeConv&lt;_Yp&gt;&gt;</a>
 <a name="1107"><span class="lineNum">    1107 </span>            :         __shared_ptr(_Yp* __p, _Deleter __d)</a>
@@ -1211,9 +1211,9 @@
 <a name="1149"><span class="lineNum">    1149 </span>            :           __r._M_ptr = nullptr;</a>
 <a name="1150"><span class="lineNum">    1150 </span>            :         }</a>
 <a name="1151"><span class="lineNum">    1151 </span>            : </a>
-<a name="1152"><span class="lineNum">    1152 </span><span class="lineCov">          6 :       __shared_ptr(const __shared_ptr&amp;) noexcept = default;</span></a>
+<a name="1152"><span class="lineNum">    1152 </span><span class="lineCov">          2 :       __shared_ptr(const __shared_ptr&amp;) noexcept = default;</span></a>
 <a name="1153"><span class="lineNum">    1153 </span>            :       __shared_ptr&amp; operator=(const __shared_ptr&amp;) noexcept = default;</a>
-<a name="1154"><span class="lineNum">    1154 </span><span class="lineCov">          9 :       ~__shared_ptr() = default;</span></a>
+<a name="1154"><span class="lineNum">    1154 </span><span class="lineCov">          3 :       ~__shared_ptr() = default;</span></a>
 <a name="1155"><span class="lineNum">    1155 </span>            : </a>
 <a name="1156"><span class="lineNum">    1156 </span>            :       template&lt;typename _Yp, typename = _Compatible&lt;_Yp&gt;&gt;</a>
 <a name="1157"><span class="lineNum">    1157 </span>            :         __shared_ptr(const __shared_ptr&lt;_Yp, _Lp&gt;&amp; __r) noexcept</a>
@@ -1354,8 +1354,8 @@
 <a name="1292"><span class="lineNum">    1292 </span>            : </a>
 <a name="1293"><span class="lineNum">    1293 </span>            :       /// Return the stored pointer.</a>
 <a name="1294"><span class="lineNum">    1294 </span>            :       element_type*</a>
-<a name="1295"><span class="lineNum">    1295 </span><span class="lineCov">          3 :       get() const noexcept</span></a>
-<a name="1296"><span class="lineNum">    1296 </span><span class="lineCov">          3 :       { return _M_ptr; }</span></a>
+<a name="1295"><span class="lineNum">    1295 </span><span class="lineCov">          1 :       get() const noexcept</span></a>
+<a name="1296"><span class="lineNum">    1296 </span><span class="lineCov">          1 :       { return _M_ptr; }</span></a>
 <a name="1297"><span class="lineNum">    1297 </span>            : </a>
 <a name="1298"><span class="lineNum">    1298 </span>            :       /// Return true if the stored pointer is not null.</a>
 <a name="1299"><span class="lineNum">    1299 </span>            :       explicit operator bool() const noexcept</a>
@@ -1445,8 +1445,8 @@
 <a name="1383"><span class="lineNum">    1383 </span>            : </a>
 <a name="1384"><span class="lineNum">    1384 </span>            :       template&lt;typename _Yp, typename _Yp2 = typename remove_cv&lt;_Yp&gt;::type&gt;</a>
 <a name="1385"><span class="lineNum">    1385 </span>            :         typename enable_if&lt;!__has_esft_base&lt;_Yp2&gt;::value&gt;::type</a>
-<a name="1386"><span class="lineNum">    1386 </span><span class="lineCov">          3 :         _M_enable_shared_from_this_with(_Yp*) noexcept</span></a>
-<a name="1387"><span class="lineNum">    1387 </span><span class="lineCov">          3 :         { }</span></a>
+<a name="1386"><span class="lineNum">    1386 </span><span class="lineCov">          1 :         _M_enable_shared_from_this_with(_Yp*) noexcept</span></a>
+<a name="1387"><span class="lineNum">    1387 </span><span class="lineCov">          1 :         { }</span></a>
 <a name="1388"><span class="lineNum">    1388 </span>            : </a>
 <a name="1389"><span class="lineNum">    1389 </span>            :       void*</a>
 <a name="1390"><span class="lineNum">    1390 </span>            :       _M_get_deleter(const std::type_info&amp; __ti) const noexcept</a>

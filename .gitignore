@@ -40,4 +40,5 @@
 ./output
 
 # vscode
-./.vscode
+.vscode
+.history

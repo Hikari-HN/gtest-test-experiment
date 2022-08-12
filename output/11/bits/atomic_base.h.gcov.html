@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-08-03 18:22:41</td>
+            <td class="headerValue">2022-08-12 14:02:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -397,7 +397,7 @@
 <a name="335"><span class="lineNum">     335 </span>            :       __atomic_base&amp; operator=(const __atomic_base&amp;) volatile = delete;</a>
 <a name="336"><span class="lineNum">     336 </span>            : </a>
 <a name="337"><span class="lineNum">     337 </span>            :       // Requires __int_type convertible to _M_i.</a>
-<a name="338"><span class="lineNum">     338 </span><span class="lineCov">          3 :       constexpr __atomic_base(__int_type __i) noexcept : _M_i (__i) { }</span></a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineCov">          1 :       constexpr __atomic_base(__int_type __i) noexcept : _M_i (__i) { }</span></a>
 <a name="339"><span class="lineNum">     339 </span>            : </a>
 <a name="340"><span class="lineNum">     340 </span>            :       operator __int_type() const noexcept</a>
 <a name="341"><span class="lineNum">     341 </span>            :       { return load(); }</a>
@@ -705,7 +705,7 @@
 <a name="643"><span class="lineNum">     643 </span>            :       _GLIBCXX_ALWAYS_INLINE __int_type</a>
 <a name="644"><span class="lineNum">     644 </span>            :       fetch_sub(__int_type __i,</a>
 <a name="645"><span class="lineNum">     645 </span>            :                 memory_order __m = memory_order_seq_cst) noexcept</a>
-<a name="646"><span class="lineNum">     646 </span><span class="lineCov">          3 :       { return __atomic_fetch_sub(&amp;_M_i, __i, int(__m)); }</span></a>
+<a name="646"><span class="lineNum">     646 </span><span class="lineCov">          1 :       { return __atomic_fetch_sub(&amp;_M_i, __i, int(__m)); }</span></a>
 <a name="647"><span class="lineNum">     647 </span>            : </a>
 <a name="648"><span class="lineNum">     648 </span>            :       _GLIBCXX_ALWAYS_INLINE __int_type</a>
 <a name="649"><span class="lineNum">     649 </span>            :       fetch_sub(__int_type __i,</a>
