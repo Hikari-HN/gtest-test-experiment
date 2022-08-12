@@ -167,6 +167,26 @@ public:
      */
     bool testbad_substringMatches() const;
 
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testCopyASCIISequence() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testCopyUTF8Sequence() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testCopyUTF16BESequence() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testCopyUTF32Sequence() const;
+
     /**
      * Returns the length of this string.
      */
