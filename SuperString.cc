@@ -743,6 +743,7 @@ std::size_t SuperString::ConstUTF16BESequence::length() const /*override*/ {
 
 SuperString::Result<int, SuperString::Error> SuperString::ConstUTF16BESequence::codeUnitAt(
         std::size_t index) const {
+    std::cout<<"index: "<<index<<"length: "<<this->length()<<std::endl;
     if(index < this->length()) {
         return SuperString::UTF16BE::codeUnitAt(this->_bytes, index);
     }
@@ -1144,6 +1145,7 @@ std::size_t SuperString::SubstringSequence::length() const /*override*/ {
         case Kind::RECONSTRUCTED:
             return this->_container._reconstructed._length;
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 SuperString::Result<int, SuperString::Error> SuperString::SubstringSequence::codeUnitAt(
@@ -1177,14 +1179,17 @@ SuperString::SubstringSequence::substring(std::size_t startIndex, std::size_t en
                                                           this->_container._substring._startIndex +
                                                           endIndex)));
             }
-        case Kind::RECONSTRUCTED:
+        case Kind::RECONSTRUCTED:    
             // TODO: General code, specify + repeated * times
             if(this->length() < startIndex || this->length() < endIndex) {
                 return Result<SuperString, Error>(Error::RangeError);
             }
-            SubstringSequence *sequence = new SubstringSequence(this, startIndex, endIndex);
-            return Result<SuperString, Error>(SuperString(sequence));
+            return Result<SuperString, Error>(Error::Unimplemented);
+            // FIXME: Not implemented yet by Hikari, always return Error::Unimplemented
+            // SubstringSequence *sequence = new SubstringSequence(this, startIndex, endIndex);
+            // return Result<SuperString, Error>(SuperString(sequence));
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 bool SuperString::SubstringSequence::print(std::ostream &stream) const {
@@ -1196,6 +1201,7 @@ bool SuperString::SubstringSequence::print(std::ostream &stream) const {
             SuperString::UTF32::print(stream, ((Byte *) this->_container._reconstructed._data));
             return true;
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 bool SuperString::SubstringSequence::print(std::ostream &stream, std::size_t startIndex,
@@ -1209,6 +1215,7 @@ bool SuperString::SubstringSequence::print(std::ostream &stream, std::size_t sta
             SuperString::UTF32::print(stream, ((Byte *) this->_container._reconstructed._data), startIndex, endIndex);
             return true;
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 SuperString SuperString::SubstringSequence::trim() const {
@@ -1253,6 +1260,7 @@ std::size_t SuperString::SubstringSequence::keepingCost() const {
         case Kind::RECONSTRUCTED:
             return sizeof(SubstringSequence) + this->_container._reconstructed._length * sizeof(int);
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 std::size_t SuperString::SubstringSequence::reconstructionCost(const StringSequence *sequence) const {
@@ -1275,7 +1283,8 @@ void SuperString::SubstringSequence::reconstruct(const StringSequence *sequence)
         }
         old._sequence->removeReferencer(self);
         if(old._sequence->refCount() == 0 && old._sequence->freeingCost() < old._sequence->keepingCost()) {
-            old._sequence->doDelete();
+            // FIXME: Never goes here! by Hikari
+            // old._sequence->doDelete();
         }
         self->_kind = Kind::RECONSTRUCTED;
         self->_container._reconstructed = nw;
@@ -1361,6 +1370,7 @@ std::size_t SuperString::ConcatenationSequence::length() const {
         case Kind::RECONSTRUCTED:
             return this->_container._reconstructed._length;
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 SuperString::Result<int, SuperString::Error>
@@ -1409,8 +1419,10 @@ SuperString::ConcatenationSequence::substring(std::size_t startIndex,
     if(this->length() < startIndex || this->length() < endIndex) {
         return Result<SuperString, Error>(Error::RangeError);
     }
-    SubstringSequence *sequence = new SubstringSequence(this, startIndex, endIndex);
-    return Result<SuperString, Error>(SuperString(sequence));
+    return Result<SuperString, Error>(Error::Unimplemented);
+    // FIXME: Not implemented yet by Hikari, always return Error::Unimplemented
+    // SubstringSequence *sequence = new SubstringSequence(this, startIndex, endIndex);
+    // return Result<SuperString, Error>(SuperString(sequence));
 }
 
 bool SuperString::ConcatenationSequence::print(std::ostream &stream) const {
@@ -1520,7 +1532,9 @@ SuperString SuperString::ConcatenationSequence::trim() const {
     while(result.isOk() && SuperString::isWhiteSpace(result.ok())) {
         result = this->codeUnitAt(--endIndex - 1);
     }
-    return this->substring(startIndex, endIndex).ok();
+    return SuperString();
+    // FIXME: Substring Is Not implemented yet by Hikari, always return SuperString()
+    // return this->substring(startIndex, endIndex).ok();
 }
 
 SuperString SuperString::ConcatenationSequence::trimLeft() const {
@@ -1530,7 +1544,9 @@ SuperString SuperString::ConcatenationSequence::trimLeft() const {
     while(result.isOk() && SuperString::isWhiteSpace(result.ok())) {
         result = this->codeUnitAt(++startIndex);
     }
-    return this->substring(startIndex, this->length()).ok();
+    return SuperString();
+    // FIXME: Substring Is Not implemented yet by Hikari, always return SuperString()
+    // return this->substring(startIndex, this->length()).ok();
 }
 
 SuperString SuperString::ConcatenationSequence::trimRight() const {
@@ -1540,7 +1556,9 @@ SuperString SuperString::ConcatenationSequence::trimRight() const {
     while(result.isOk() && SuperString::isWhiteSpace(result.ok())) {
         result = this->codeUnitAt(--endIndex - 1);
     }
-    return this->substring(0, endIndex).ok();
+    return SuperString();
+    // FIXME: Substring Is Not implemented yet by Hikari, always return SuperString()
+    // return this->substring(0, endIndex).ok();
 }
 
 std::size_t SuperString::ConcatenationSequence::keepingCost() const {
@@ -1557,6 +1575,7 @@ std::size_t SuperString::ConcatenationSequence::keepingCost() const {
         case Kind::RECONSTRUCTED:
             return sizeof(ConcatenationSequence) + this->_container._reconstructed._length * sizeof(int);
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 std::size_t SuperString::ConcatenationSequence::reconstructionCost(const StringSequence *sequence) const {
@@ -1587,6 +1606,7 @@ std::size_t SuperString::ConcatenationSequence::reconstructionCost(const StringS
         case Kind::RECONSTRUCTED:
             return 0;
     }
+    /* FIXME: Never goes here! by Hikari */
 }
 
 void SuperString::ConcatenationSequence::reconstruct(const StringSequence *sequence) const {
@@ -1603,13 +1623,16 @@ void SuperString::ConcatenationSequence::reconstruct(const StringSequence *seque
             }
             old._left->removeReferencer(self);
             if(old._left->refCount() == 0 && old._left->freeingCost() < old._left->keepingCost()) {
-                old._left->doDelete();
+                // FIXME: Never goes here! by Hikari
+                // old._left->doDelete();
             }
             self->_kind = Kind::LEFTRECONSTRUCTED;
             self->_container._leftReconstructed = nw;
         } else if(old._right == sequence) {
             struct RightReconstructedMetaInfo nw;
-            nw._left = old._right;
+            nw._left = old._left; 
+            //FIXME: Real Logic Bug From Author!!! By Hikari  
+            // nw._left = old._right;
             nw._rightLength = old._right->length();
             nw._rightData = new int[nw._rightLength];
             for(std::size_t i = 0; i < nw._rightLength; i++) {
@@ -1617,7 +1640,8 @@ void SuperString::ConcatenationSequence::reconstruct(const StringSequence *seque
             }
             old._right->removeReferencer(self);
             if(old._right->refCount() == 0 && old._right->freeingCost() < old._right->keepingCost()) {
-                old._right->doDelete();
+                // FIXME: Never goes here! by Hikari
+                // old._right->doDelete();
             }
             self->_kind = Kind::RIGHTRECONSTRUCTED;
             self->_container._rightReconstructed = nw;
@@ -1714,6 +1738,7 @@ std::size_t SuperString::MultipleSequence::length() const {
         case Kind::RECONSTRUCTED:
             return this->_container._reconstructed._dataLength * this->_container._reconstructed._time;
     }
+    // FIXME: Never goes here! by Hikari
 }
 
 SuperString::Result<int, SuperString::Error> SuperString::MultipleSequence::codeUnitAt(std::size_t index) const {
@@ -1737,8 +1762,10 @@ SuperString::MultipleSequence::substring(std::size_t startIndex,
     if(length < startIndex || length < endIndex) {
         return Result<SuperString, Error>(Error::RangeError);
     }
-    SubstringSequence *sequence = new SubstringSequence(this, startIndex, endIndex);
-    return Result<SuperString, Error>(SuperString(sequence));
+    return Result<SuperString, Error>(Error::Unimplemented);
+    // FIXME: Not implemented yet by Hikari, always return Error::Unimplemented
+    // SubstringSequence *sequence = new SubstringSequence(this, startIndex, endIndex);
+    // return Result<SuperString, Error>(SuperString(sequence));
 }
 
 bool SuperString::MultipleSequence::print(std::ostream &stream) const {
@@ -1833,7 +1860,9 @@ SuperString SuperString::MultipleSequence::trim() const {
     while(result.isOk() && SuperString::isWhiteSpace(result.ok())) {
         result = this->codeUnitAt(--endIndex - 1);
     }
-    return this->substring(startIndex, endIndex).ok();
+    return SuperString();
+    // FIXME: Substring Is Not implemented yet by Hikari, always return SuperString()
+    // return this->substring(startIndex, endIndex).ok();
 }
 
 SuperString SuperString::MultipleSequence::trimLeft() const {
@@ -1843,7 +1872,9 @@ SuperString SuperString::MultipleSequence::trimLeft() const {
     while(result.isOk() && SuperString::isWhiteSpace(result.ok())) {
         result = this->codeUnitAt(++startIndex);
     }
-    return this->substring(startIndex, this->length()).ok();
+    return SuperString();
+    // FIXME: Substring Is Not implemented yet by Hikari, always return SuperString()
+    // return this->substring(startIndex, this->length()).ok();
 }
 
 SuperString SuperString::MultipleSequence::trimRight() const {
@@ -1853,7 +1884,9 @@ SuperString SuperString::MultipleSequence::trimRight() const {
     while(result.isOk() && SuperString::isWhiteSpace(result.ok())) {
         result = this->codeUnitAt(--endIndex - 1);
     }
-    return this->substring(0, endIndex).ok();
+    return SuperString();
+    // FIXME: Substring Is Not implemented yet by Hikari, always return SuperString()
+    // return this->substring(0, endIndex).ok();
 }
 
 std::size_t SuperString::MultipleSequence::keepingCost() const {
@@ -1863,6 +1896,7 @@ std::size_t SuperString::MultipleSequence::keepingCost() const {
         case Kind::RECONSTRUCTED:
             return sizeof(MultipleSequence) + this->_container._reconstructed._dataLength * sizeof(int);
     }
+    // FIXME: Never goes here! by Hikari
     return 0;
 }
 
@@ -1874,6 +1908,7 @@ std::size_t SuperString::MultipleSequence::reconstructionCost(const StringSequen
         case Kind::RECONSTRUCTED:
             return 0;
     }
+    // FIXME: Never goes here! by Hikari
 }
 
 void SuperString::MultipleSequence::reconstruct(const StringSequence *sequence) const {
@@ -2043,7 +2078,7 @@ void SuperString::UTF8::print(std::ostream &stream, const SuperString::Byte *byt
 
 SuperString::Result<SuperString::Pair<std::size_t, std::size_t>, SuperString::Error>
 SuperString::UTF8::rangeIndexes(
-        const SuperString::Byte *bytes, std::size_t startIndex, std::size_t endIndex) {
+        const SuperString::Byte *bytes, std::size_t startIndex, std::size_t endIndex) {        
     std::size_t i = 0;
     std::size_t startOffset, endOffset;
     bool first = false, second = false;
@@ -2208,16 +2243,17 @@ std::size_t SuperString::UTF32::length(const SuperString::Byte *bytes) {
     return (pointer - bytes) / 4;
 }
 
-SuperString::Pair<std::size_t, std::size_t> SuperString::UTF32::lengthAndMemoryLength(
-        const SuperString::Byte *bytes) {
-    std::size_t length = 0;
-    const Byte *pointer = bytes;
-    while(*((int *) pointer) != 0x00) {
-        pointer += 4;
-        length++;
-    }
-    return Pair<std::size_t, std::size_t>(length, pointer - bytes + 4);
-}
+// FIXME: DEAD METHOD TO IGNORE by Hikari
+// SuperString::Pair<std::size_t, std::size_t> SuperString::UTF32::lengthAndMemoryLength(
+//         const SuperString::Byte *bytes) {
+//     std::size_t length = 0;
+//     const Byte *pointer = bytes;
+//     while(*((int *) pointer) != 0x00) {
+//         pointer += 4;
+//         length++;
+//     }
+//     return Pair<std::size_t, std::size_t>(length, pointer - bytes + 4);
+// }
 
 int SuperString::UTF32::codeUnitAt(const SuperString::Byte *bytes, std::size_t index) {
     return *(((int *) bytes) + index);

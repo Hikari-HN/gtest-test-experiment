@@ -187,6 +187,42 @@ public:
      */
     bool testCopyUTF32Sequence() const;
 
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testSubstringSequence_ref() const;
+    
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testSubstringSequence_substr() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testSubstringSequence_trim() const;
+    
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testConcatenationSequence_simple() const;
+    
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testMultipleSequence_simple() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testUTF16BE_simple() const;
+
+    /* FIXME
+     * Use for testing by Hikari.
+     */
+    bool testUTF32_simple() const;
+
     /**
      * Returns the length of this string.
      */
@@ -1318,8 +1354,9 @@ private:
     public:
         static std::size_t length(const SuperString::Byte *bytes);
 
-        static SuperString::Pair<std::size_t, std::size_t>
-        lengthAndMemoryLength(const SuperString::Byte *bytes);
+        // FIXME: DEAD METHOD TO IGNORE by Hikari
+        // static SuperString::Pair<std::size_t, std::size_t>
+        // lengthAndMemoryLength(const SuperString::Byte *bytes);
 
         static int codeUnitAt(const SuperString::Byte *bytes, std::size_t index);
 

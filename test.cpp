@@ -2,7 +2,7 @@
  * @Author: Hikari_HN lizihao_@nudt.edu.cn
  * @Date: 2022-08-03 17:01:53
  * @LastEditors: Hikari_HN lizihao_@nudt.edu.cn
- * @LastEditTime: 2022-08-13 03:54:49
+ * @LastEditTime: 2022-08-14 05:50:47
  * @FilePath: /gtest-test-experiment/test.cpp
  * @Description:
  *
@@ -20,6 +20,7 @@ TEST(Test, BasicCASE)
     SuperString s3 = SuperString(s2);
     EXPECT_EQ(s1.isEmpty(), true);
     EXPECT_EQ(s2.isNotEmpty(), true);
+    std::cout << s2 << std::endl;
 }
 
 TEST(Test, compareToCASE)
@@ -173,6 +174,7 @@ TEST(Test, stringsequence_violent_CASE)
 TEST(Test, constASCIIsequence_CASE)
 {
     SuperString s1 = SuperString::Const("aaa", SuperString::Encoding::ASCII);
+    SuperString s2 = SuperString::Const(" aaa ", SuperString::Encoding::ASCII);
     EXPECT_EQ(s1.length(), 3);
     EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
     EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
@@ -183,9 +185,10 @@ TEST(Test, constASCIIsequence_CASE)
     s1.print(std::cout, 1, 2);
     s1.print(std::cout, 1, 5);
     s1.print(std::cout, -1, 2);
-    EXPECT_EQ(s1.trim(), s1);
-    EXPECT_EQ(s1.trimLeft(), s1);
-    EXPECT_EQ(s1.trimRight(), s1);
+    EXPECT_EQ(s2.length(), 5);
+    s2.trim();
+    s2.trimLeft();
+    s2.trimRight();
 }
 
 bool SuperString::testCopyASCIISequence() const
@@ -218,7 +221,23 @@ TEST(Test, copyASCIIsequence_CASE)
 TEST(Test, constUTF8Sequence_CASE)
 {
     SuperString s1 = SuperString::Const("aaa", SuperString::Encoding::UTF8);
+    SuperString::Byte b[10] = {0xFF, 0xF0, 0xE0, 0xC0, 0xFF};
+    SuperString s2 = SuperString::Const(b, SuperString::Encoding::UTF8);
+    EXPECT_EQ(s2.length(), 0);
+    EXPECT_EQ(s2.codeUnitAt(0).isErr(), 1);
     EXPECT_EQ(s1.length(), 3);
+    SuperString::Byte c[10] = {0xF0};
+    SuperString s3 = SuperString::Const(c, SuperString::Encoding::UTF8);
+    EXPECT_EQ(s3.length(), 1);
+    EXPECT_EQ(s3.codeUnitAt(0).ok(), 0);
+    SuperString::Byte d[10] = {0xE0};
+    SuperString s4 = SuperString::Const(d, SuperString::Encoding::UTF8);
+    EXPECT_EQ(s4.length(), 1);
+    EXPECT_EQ(s4.codeUnitAt(0).ok(), 0);
+    SuperString::Byte e[10] = {0xC0};
+    SuperString s5 = SuperString::Const(e, SuperString::Encoding::UTF8);
+    EXPECT_EQ(s5.length(), 1);
+    EXPECT_EQ(s5.codeUnitAt(0).ok(), 0);
     EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
     EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
     EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::UTF8));
@@ -228,6 +247,8 @@ TEST(Test, constUTF8Sequence_CASE)
     s1.print(std::cout, 1, 2);
     s1.print(std::cout, 1, 5);
     s1.print(std::cout, -1, 2);
+    s1.print(std::cout, 2, 1);
+    s2.print(std::cout, 0, 0);
     EXPECT_EQ(s1.trim(), s1);
     EXPECT_EQ(s1.trimLeft(), s1);
     EXPECT_EQ(s1.trimRight(), s1);
@@ -247,6 +268,8 @@ TEST(Test, copyUTF8sequence_CASE)
     SuperString s2 = SuperString::Copy(" aaa ", SuperString::Encoding::UTF8);
     SuperString s3 = SuperString::Copy(" aaa", SuperString::Encoding::UTF8);
     SuperString s4 = SuperString::Copy("aaa ", SuperString::Encoding::UTF8);
+    SuperString::Byte b[10] = {0xFF, 0xF0, 0xE0, 0xC0, 0xFF};
+    SuperString s5 = SuperString::Copy(b, SuperString::Encoding::UTF8);
     EXPECT_EQ(s1.length(), 3);
     EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
     EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
@@ -261,6 +284,17 @@ TEST(Test, copyUTF8sequence_CASE)
     EXPECT_EQ(s3.trimLeft(), s1);
     EXPECT_EQ(s4.trimRight(), s1);
     EXPECT_EQ(s1.testCopyUTF8Sequence(), true);
+}
+
+bool SuperString::testUTF16BE_simple() const
+{
+    SuperString::Byte b[11] = {0xD8, 0xD8, 0xD8, 0xD8};
+    SuperString s1 = SuperString::Const(b, SuperString::Encoding::UTF16BE);
+    EXPECT_EQ(s1.length(), 2);
+    s1.codeUnitAt(0);
+    s1.codeUnitAt(1);
+    s1.print(std::cout);
+    return true;
 }
 
 TEST(Test, constUTF16BESequence_CASE)
@@ -283,6 +317,7 @@ TEST(Test, constUTF16BESequence_CASE)
     EXPECT_EQ(s1.trim().isEmpty(), 0);
     EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
     EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+    EXPECT_EQ(s1.testUTF16BE_simple(), true);
 }
 
 bool SuperString::testCopyUTF16BESequence() const
@@ -316,6 +351,16 @@ TEST(Test, copyUTF16BESequence_CASE)
     EXPECT_EQ(s1.testCopyUTF16BESequence(), true);
 }
 
+bool SuperString::testUTF32_simple() const
+{
+    SuperString::Byte b[11] = {0x00, 0x00, 0x10, 0x00};
+    SuperString s1 = SuperString::Const(b, SuperString::Encoding::UTF32);
+    EXPECT_EQ(s1.length(), 1);
+    s1.print(std::cout);
+    s1.length();
+    return true;
+}
+
 TEST(Test, constUTF32Sequence_CASE)
 {
     SuperString::Byte b[16] = {};
@@ -336,6 +381,7 @@ TEST(Test, constUTF32Sequence_CASE)
     EXPECT_EQ(s1.trim().isEmpty(), 0);
     EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
     EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+    EXPECT_EQ(s1.testUTF32_simple(), true);
 }
 
 bool SuperString::testCopyUTF32Sequence() const
@@ -369,7 +415,175 @@ TEST(Test, copyUTF32Sequence_CASE)
     EXPECT_EQ(s1.testCopyUTF32Sequence(), true);
 }
 
+bool SuperString::testSubstringSequence_ref() const
+{
+    auto *s1 = new SubstringSequence(this->_sequence, 0, 3);
+    SubstringSequence ss1 = SubstringSequence(s1, 0, 3);
+    return true;
+}
 
+bool SuperString::testSubstringSequence_substr() const
+{
+    SubstringSequence ss1 = SubstringSequence(this->_sequence, 0, 3);
+    SubstringSequence ss2 = SubstringSequence(this->_sequence, 1, 3);
+    SubstringSequence ss3 = SubstringSequence(this->_sequence, 0, 3);
+    SubstringSequence ss4 = SubstringSequence(this->_sequence, 0, 3);
+    EXPECT_EQ(ss2.reconstructionCost(NULL), 72);
+    ss2.reconstruct(NULL);
+    EXPECT_EQ(ss2.length(), 2);
+    EXPECT_EQ(ss2.codeUnitAt(0).ok(), 'a');
+    EXPECT_EQ(ss2.codeUnitAt(5).isErr(), 1);
+    EXPECT_EQ(ss1.substring(1, 2).isOk(), 1);
+    EXPECT_EQ(ss3.substring(-1, 2).isErr(), 1);
+    EXPECT_EQ(ss4.substring(1, 5).isErr(), 1);
+    ss1.print(std::cout);
+    ss2.print(std::cout);
+    ss1.print(std::cout, 1, 2);
+    ss2.print(std::cout, 1, 2);
+    EXPECT_EQ(ss2.keepingCost(), 72);
+    EXPECT_EQ(ss2.substring(-1, 2).isErr(), 1);
+    EXPECT_EQ(ss2.substring(1, 5).isErr(), 1);
+    EXPECT_EQ(ss2.substring(1, 2).isErr(), 1);
+    return true;
+}
+
+bool SuperString::testSubstringSequence_trim() const
+{
+    SubstringSequence ss = SubstringSequence(this->_sequence, 0, 5);
+    EXPECT_EQ(ss.trim().isNotEmpty(), 1);
+    EXPECT_EQ(ss.trimLeft().isNotEmpty(), 1);
+    EXPECT_EQ(ss.trimRight().isNotEmpty(), 1);
+    return true;
+}
+
+TEST(Test, substringSequence_violent_CASE)
+{
+    SuperString s1 = SuperString::Const("aaa");
+    SuperString s2 = SuperString::Const(" aaa ");
+    EXPECT_EQ(s1.testSubstringSequence_ref(), true);
+    EXPECT_EQ(s1.testSubstringSequence_substr(), true);
+    EXPECT_EQ(s2.testSubstringSequence_trim(), true);
+}
+
+bool SuperString::testConcatenationSequence_simple() const
+{
+    SuperString s1 = SuperString::Const(" bbb ");
+    auto *cs1 = new ConcatenationSequence(this->_sequence, s1._sequence);
+    auto *cs2 = new ConcatenationSequence(this->_sequence, s1._sequence);
+    auto *cs3 = new ConcatenationSequence(this->_sequence, s1._sequence);
+    auto *cs4 = new ConcatenationSequence(this->_sequence, s1._sequence);
+    auto *cs5 = new ConcatenationSequence(this->_sequence, s1._sequence);
+    auto *cs6 = new ConcatenationSequence(this->_sequence, s1._sequence);
+    ConcatenationSequence cs_l = ConcatenationSequence(cs1, this->_sequence);
+    ConcatenationSequence cs_r = ConcatenationSequence(this->_sequence, cs2);
+    ConcatenationSequence cs_lcstr = ConcatenationSequence(this->_sequence, cs3);
+    ConcatenationSequence cs_rcstr = ConcatenationSequence(cs4, this->_sequence);
+    ConcatenationSequence cs_lcstr_r = ConcatenationSequence(this->_sequence, cs5);
+    ConcatenationSequence cs_rcstr_l = ConcatenationSequence(cs6, this->_sequence);
+    cs_lcstr.reconstruct(this->_sequence);
+    cs_rcstr.reconstruct(this->_sequence);
+    cs_lcstr_r.reconstruct(this->_sequence);
+    cs_rcstr_l.reconstruct(this->_sequence);
+    cs_lcstr_r.reconstruct(cs5);
+    cs_rcstr_l.reconstruct(cs6);
+    EXPECT_EQ(cs_lcstr.length(), 15);
+    EXPECT_EQ(cs_rcstr.length(), 15);
+    EXPECT_EQ(cs_lcstr_r.length(), 15);
+    EXPECT_EQ(cs_rcstr_l.length(), 15);
+    EXPECT_EQ(cs_l.codeUnitAt(0).isOk(), 1);
+    EXPECT_EQ(cs_l.codeUnitAt(14).isOk(), 1);
+    EXPECT_EQ(cs_l.codeUnitAt(20).isErr(), 1);
+    EXPECT_EQ(cs_lcstr.codeUnitAt(0).isOk(), 1);
+    EXPECT_EQ(cs_lcstr.codeUnitAt(14).isOk(), 1);
+    EXPECT_EQ(cs_lcstr.codeUnitAt(20).isErr(), 1);
+    EXPECT_EQ(cs_rcstr.codeUnitAt(0).isOk(), 1);
+    EXPECT_EQ(cs_rcstr.codeUnitAt(14).isOk(), 1);
+    EXPECT_EQ(cs_rcstr.codeUnitAt(20).isErr(), 1);
+    EXPECT_EQ(cs_rcstr_l.codeUnitAt(0).isOk(), 1);
+    EXPECT_EQ(cs_rcstr_l.codeUnitAt(20).isErr(), 1);
+    EXPECT_EQ(cs_l.substring(1, 2).isErr(), 1);
+    EXPECT_EQ(cs_l.substring(-1, 2).isErr(), 1);
+    EXPECT_EQ(cs_l.substring(1, 20).isErr(), 1);
+    cs_l.print(std::cout);
+    cs_l.print(std::cout, 1, 2);
+    cs_l.print(std::cout, 1, 20);
+    cs_l.print(std::cout, -1, 2);
+    cs_l.print(std::cout, -1, 10);
+    cs_lcstr.print(std::cout);
+    cs_lcstr.print(std::cout, 1, 2);
+    cs_lcstr.print(std::cout, 1, 20);
+    cs_lcstr.print(std::cout, -1, 2);
+    cs_lcstr.print(std::cout, -1, 10);
+    cs_rcstr.print(std::cout);
+    cs_rcstr.print(std::cout, 1, 2);
+    cs_rcstr.print(std::cout, 1, 20);
+    cs_rcstr.print(std::cout, -1, 2);
+    cs_rcstr.print(std::cout, -1, 10);
+    cs_lcstr_r.print(std::cout);
+    cs_lcstr_r.print(std::cout, 1, 2);
+    cs_l.trim();
+    cs_l.trimLeft();
+    cs_l.trimRight();
+    EXPECT_EQ(cs_lcstr.keepingCost(), 260);
+    EXPECT_EQ(cs_rcstr.keepingCost(), 260);
+    EXPECT_EQ(cs_lcstr_r.keepingCost(), 124);
+    EXPECT_EQ(cs_l.reconstructionCost(cs1), 104);
+    EXPECT_EQ(cs_l.reconstructionCost(this->_sequence), 84);
+    EXPECT_EQ(cs_l.reconstructionCost(NULL), 0);
+    EXPECT_EQ(cs_lcstr.reconstructionCost(cs3), 104);
+    EXPECT_EQ(cs_lcstr.reconstructionCost(NULL), 0);
+    EXPECT_EQ(cs_rcstr.reconstructionCost(cs4), 104);
+    EXPECT_EQ(cs_rcstr.reconstructionCost(NULL), 0);
+    EXPECT_EQ(cs_lcstr_r.reconstructionCost(NULL), 0);
+    return true;
+}
+
+TEST(Test, concatenationSequence_violent_CASE)
+{
+    SuperString s1 = SuperString::Const(" aaa ");
+    EXPECT_EQ(s1.testConcatenationSequence_simple(), true);
+}
+
+bool SuperString::testMultipleSequence_simple() const
+{
+    auto *ms1ptr = new MultipleSequence(this->_sequence, 2);
+    auto *ms2ptr = new MultipleSequence(this->_sequence, 2);
+    MultipleSequence ms1 = MultipleSequence(ms1ptr, 3);
+    MultipleSequence ms2 = MultipleSequence(ms2ptr, 3);
+    ms2.reconstruct(ms2ptr);
+    EXPECT_EQ(ms2.length(), 30);
+    EXPECT_EQ(ms2.codeUnitAt(31).isErr(), 1);
+    EXPECT_EQ(ms2.codeUnitAt(4).isOk(), 1);
+    EXPECT_EQ(ms1.substring(1, 2).isErr(), 1);
+    EXPECT_EQ(ms1.substring(-1, 2).isErr(), 1);
+    EXPECT_EQ(ms1.substring(1, 40).isErr(), 1);
+    ms1.print(std::cout);
+    ms1.print(std::cout, 1, 2);
+    ms1.print(std::cout, 1, 14);
+    ms1.print(std::cout, -1, 2);
+    ms2.print(std::cout);
+    ms2.print(std::cout, -1, 2);
+    ms2.print(std::cout, -1, 40);
+    ms2.print(std::cout, -1, 24);
+    ms1.trim();
+    ms1.trimLeft();
+    ms1.trimRight();
+    EXPECT_EQ(ms2.keepingCost(), 104);
+    EXPECT_EQ(ms1.reconstructionCost(ms1ptr), 124);
+    EXPECT_EQ(ms2.reconstructionCost(NULL), 0);
+    return true;
+}
+
+TEST(Test, multipleSequence_violent_CASE)
+{
+    SuperString s1 = SuperString::Const(" aaa ");
+    EXPECT_EQ(s1.testMultipleSequence_simple(), true);
+}
+
+TEST(Test, ASCII_violent_CASE)
+{
+    SuperString s1 = SuperString::Const(" aaa ");
+}
 
 int main(int argc, char **argv)
 {
