@@ -1,0 +1,5 @@
+diff id:000004,src:000000,time:575,execs:43,op:havoc,rep:4,+cov -> id:000005,src:000000,time:719,execs:52,op:havoc,rep:4,+cov
+Src file: /home/hikari/gtest-test-experiment/SuperString.cc
+  New 'line' coverage: 2028
+Src file: /home/hikari/gtest-test-experiment/afl/afl_test.cpp
+  New 'line' coverage: 49

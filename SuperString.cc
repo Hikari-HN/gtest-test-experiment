@@ -1,13 +1,4 @@
-/*
- * @Author: Hikari_HN lizihao_@nudt.edu.cn
- * @Date: 2022-08-03 17:01:53
- * @LastEditors: Hikari_HN lizihao_@nudt.edu.cn
- * @LastEditTime: 2022-08-14 16:21:45
- * @FilePath: /gtest-test-experiment/SuperString.cc
- * @Description: 
- * 
- * Copyright (c) 2022 by Hikari_HN lizihao_@nudt.edu.cn, All Rights Reserved. 
- */
+
 /*-- imports --*/
 
 #include "include/SuperString.hh"

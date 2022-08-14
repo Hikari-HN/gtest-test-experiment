@@ -1,0 +1,19 @@
+diff id:000007,src:000000,time:1321,execs:92,op:havoc,rep:4,+cov -> id:000008,src:000000,time:1491,execs:104,op:havoc,rep:4,+cov
+Src file: /home/hikari/gtest-test-experiment/SuperString.cc
+  New 'line' coverage: 1840
+  New 'line' coverage: 205
+  New 'line' coverage: 206
+  New 'line' coverage: 2126
+  New 'line' coverage: 2127
+  New 'line' coverage: 2128
+  New 'line' coverage: 232
+  New 'line' coverage: 233
+Src file: /home/hikari/gtest-test-experiment/afl/afl_test.cpp
+  New 'line' coverage: 165
+  New 'line' coverage: 166
+  New 'line' coverage: 167
+  New 'line' coverage: 168
+  New 'line' coverage: 169
+  New 'line' coverage: 170
+  New 'line' coverage: 171
+  New 'line' coverage: 172

@@ -1,0 +1,5070 @@
+        -:    0:Source:test.cpp
+        -:    0:Graph:test.gcno
+        -:    0:Data:test.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:/*
+        -:    2: * @Author: Hikari_HN lizihao_@nudt.edu.cn
+        -:    3: * @Date: 2022-08-03 17:01:53
+        -:    4: * @LastEditors: Hikari_HN lizihao_@nudt.edu.cn
+        -:    5: * @LastEditTime: 2022-08-14 22:28:20
+        -:    6: * @FilePath: /gtest-test-experiment/test.cpp
+        -:    7: * @Description:
+        -:    8: *
+        -:    9: * Copyright (c) 2022 by Hikari_HN lizihao_@nudt.edu.cn, All Rights Reserved.
+        -:   10: */
+        -:   11:
+        -:   12:#include <iostream>
+        -:   13:#include "SuperString.cc"
+        -:   14:#include "test_helper.cpp"
+        -:   15:#include <gtest/gtest.h>
+        -:   16:
+        4:   17:TEST(Test, BasicCASE)
+        -:   18:{
+        1:   19:    SuperString s1 = SuperString();
+        1:   20:    SuperString s2 = SuperString::Const("I am a string!");
+        1:   21:    SuperString s3 = SuperString(s2);
+       1*:   22:    EXPECT_EQ(s1.isEmpty(), true);
+       1*:   23:    EXPECT_EQ(s2.isNotEmpty(), true);
+        1:   24:    std::cout << s2 << std::endl;
+        1:   25:}
+------------------
+_ZN19Test_BasicCASE_TestC2Ev:
+function _ZN19Test_BasicCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   17:TEST(Test, BasicCASE)
+call    0 returned 100%
+------------------
+_ZN19Test_BasicCASE_TestD0Ev:
+function _ZN19Test_BasicCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   17:TEST(Test, BasicCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN19Test_BasicCASE_TestD2Ev:
+function _ZN19Test_BasicCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   17:TEST(Test, BasicCASE)
+call    0 returned 100%
+------------------
+_ZN19Test_BasicCASE_Test8TestBodyEv:
+function _ZN19Test_BasicCASE_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+        1:   17:TEST(Test, BasicCASE)
+        -:   18:{
+        1:   19:    SuperString s1 = SuperString();
+call    0 returned 100%
+        1:   20:    SuperString s2 = SuperString::Const("I am a string!");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   21:    SuperString s3 = SuperString(s2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:   22:    EXPECT_EQ(s1.isEmpty(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:   23:    EXPECT_EQ(s2.isNotEmpty(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:   24:    std::cout << s2 << std::endl;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        1:   25:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 never executed
+call    4 never executed
+call    5 never executed
+------------------
+        -:   26:
+        4:   27:TEST(Test, compareToCASE)
+        -:   28:{
+        1:   29:    SuperString s1 = SuperString::Const("aa");
+        1:   30:    SuperString s2 = SuperString::Const("aaa");
+        1:   31:    SuperString s3 = SuperString::Const("ab");
+        1:   32:    SuperString s4 = SuperString(s1);
+       1*:   33:    EXPECT_EQ(s1.compareTo(s2), -1);
+       1*:   34:    EXPECT_EQ(s2.compareTo(s1), 1);
+       1*:   35:    EXPECT_EQ(s1.compareTo(s3), -1);
+       1*:   36:    EXPECT_EQ(s3.compareTo(s1), 1);
+       1*:   37:    EXPECT_EQ(s4.compareTo(s1), 0);
+        1:   38:}
+------------------
+_ZN23Test_compareToCASE_TestC2Ev:
+function _ZN23Test_compareToCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   27:TEST(Test, compareToCASE)
+call    0 returned 100%
+------------------
+_ZN23Test_compareToCASE_TestD0Ev:
+function _ZN23Test_compareToCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   27:TEST(Test, compareToCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN23Test_compareToCASE_TestD2Ev:
+function _ZN23Test_compareToCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   27:TEST(Test, compareToCASE)
+call    0 returned 100%
+------------------
+_ZN23Test_compareToCASE_Test8TestBodyEv:
+function _ZN23Test_compareToCASE_Test8TestBodyEv called 1 returned 100% blocks executed 24%
+        1:   27:TEST(Test, compareToCASE)
+        -:   28:{
+        1:   29:    SuperString s1 = SuperString::Const("aa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   30:    SuperString s2 = SuperString::Const("aaa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   31:    SuperString s3 = SuperString::Const("ab");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   32:    SuperString s4 = SuperString(s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:   33:    EXPECT_EQ(s1.compareTo(s2), -1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:   34:    EXPECT_EQ(s2.compareTo(s1), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:   35:    EXPECT_EQ(s1.compareTo(s3), -1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:   36:    EXPECT_EQ(s3.compareTo(s1), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:   37:    EXPECT_EQ(s4.compareTo(s1), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:   38:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+------------------
+        -:   39:
+        4:   40:TEST(Test, indexCASE)
+        -:   41:{
+        1:   42:    SuperString s1 = SuperString::Const("aabcccc");
+        1:   43:    SuperString s2 = SuperString::Const("ab");
+        1:   44:    SuperString s3 = SuperString();
+        1:   45:    SuperString s4 = SuperString::Const("x");
+        1:   46:    SuperString s5 = SuperString::Const("");
+       1*:   47:    EXPECT_EQ(s1.indexOf(s2).ok(), 1);
+       1*:   48:    EXPECT_EQ(s1.indexOf(s4).isErr(), 1);
+       1*:   49:    EXPECT_EQ(s1.indexOf(s5).ok(), 0);
+       1*:   50:    EXPECT_EQ(s3.indexOf(s1).isErr(), 1);
+       1*:   51:    EXPECT_EQ(s1.lastIndexOf(s2).ok(), 1);
+       1*:   52:    EXPECT_EQ(s1.lastIndexOf(s4).isErr(), 1);
+       1*:   53:    EXPECT_EQ(s3.lastIndexOf(s1).isErr(), 1);
+       1*:   54:    EXPECT_EQ(s3.codeUnitAt(1).isErr(), 1);
+        1:   55:}
+------------------
+_ZN19Test_indexCASE_TestC2Ev:
+function _ZN19Test_indexCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   40:TEST(Test, indexCASE)
+call    0 returned 100%
+------------------
+_ZN19Test_indexCASE_TestD0Ev:
+function _ZN19Test_indexCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   40:TEST(Test, indexCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN19Test_indexCASE_TestD2Ev:
+function _ZN19Test_indexCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   40:TEST(Test, indexCASE)
+call    0 returned 100%
+------------------
+_ZN19Test_indexCASE_Test8TestBodyEv:
+function _ZN19Test_indexCASE_Test8TestBodyEv called 1 returned 100% blocks executed 28%
+        1:   40:TEST(Test, indexCASE)
+        -:   41:{
+        1:   42:    SuperString s1 = SuperString::Const("aabcccc");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   43:    SuperString s2 = SuperString::Const("ab");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   44:    SuperString s3 = SuperString();
+call    0 returned 100%
+        1:   45:    SuperString s4 = SuperString::Const("x");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   46:    SuperString s5 = SuperString::Const("");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:   47:    EXPECT_EQ(s1.indexOf(s2).ok(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   48:    EXPECT_EQ(s1.indexOf(s4).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   49:    EXPECT_EQ(s1.indexOf(s5).ok(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   50:    EXPECT_EQ(s3.indexOf(s1).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   51:    EXPECT_EQ(s1.lastIndexOf(s2).ok(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   52:    EXPECT_EQ(s1.lastIndexOf(s4).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   53:    EXPECT_EQ(s3.lastIndexOf(s1).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+call    7 returned 100%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0% (throw)
+call   10 returned 100%
+call   11 returned 100%
+call   12 returned 100%
+branch 13 taken 0% (fallthrough)
+branch 14 taken 100%
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 never executed
+call   29 never executed
+call   30 never executed
+       1*:   54:    EXPECT_EQ(s3.codeUnitAt(1).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:   55:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+------------------
+        -:   56:
+        4:   57:TEST(Test, substringCASE)
+        -:   58:{
+        1:   59:    SuperString s1 = SuperString::Const("abc");
+        1:   60:    SuperString s2 = SuperString();
+       2*:   61:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("b"));
+       1*:   62:    EXPECT_EQ(s2.substring(1, 2).isErr(), 1);
+       2*:   63:    EXPECT_EQ(s1.substr(0, 2), SuperString::Const("ab"));
+       1*:   64:    EXPECT_ANY_THROW(s2.substr(0, 2));
+       2*:   65:    EXPECT_EQ(s1.substr(0), SuperString::Const("abc"));
+       1*:   66:    EXPECT_ANY_THROW(s2.substr(0));
+        1:   67:}
+------------------
+_ZN23Test_substringCASE_TestC2Ev:
+function _ZN23Test_substringCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   57:TEST(Test, substringCASE)
+call    0 returned 100%
+------------------
+_ZN23Test_substringCASE_TestD0Ev:
+function _ZN23Test_substringCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   57:TEST(Test, substringCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN23Test_substringCASE_TestD2Ev:
+function _ZN23Test_substringCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   57:TEST(Test, substringCASE)
+call    0 returned 100%
+------------------
+_ZN23Test_substringCASE_Test8TestBodyEv:
+function _ZN23Test_substringCASE_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+        1:   57:TEST(Test, substringCASE)
+        -:   58:{
+        1:   59:    SuperString s1 = SuperString::Const("abc");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   60:    SuperString s2 = SuperString();
+call    0 returned 100%
+       2*:   61:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("b"));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+call   28 never executed
+call   29 returned 100%
+call   30 never executed
+call   31 never executed
+call   32 never executed
+       1*:   62:    EXPECT_EQ(s2.substring(1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       2*:   63:    EXPECT_EQ(s1.substr(0, 2), SuperString::Const("ab"));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:   64:    EXPECT_ANY_THROW(s2.substr(0, 2));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0%
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100% (throw)
+call   13 never executed
+branch 14 taken 0% (fallthrough)
+branch 15 taken 100%
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 returned 100%
+branch 29 taken 100% (fallthrough)
+branch 30 taken 0% (throw)
+call   31 never executed
+call   32 never executed
+       2*:   65:    EXPECT_EQ(s1.substr(0), SuperString::Const("abc"));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:   66:    EXPECT_ANY_THROW(s2.substr(0));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0%
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100% (throw)
+call   13 never executed
+branch 14 taken 0% (fallthrough)
+branch 15 taken 100%
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 returned 100%
+branch 29 taken 100% (fallthrough)
+branch 30 taken 0% (throw)
+call   31 never executed
+call   32 never executed
+        1:   67:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+call    3 never executed
+------------------
+        -:   68:
+        4:   69:TEST(Test, printCASE)
+        -:   70:{
+        1:   71:    SuperString s1 = SuperString::Const("abc");
+        1:   72:    SuperString s2 = SuperString();
+        1:   73:    s1.print(std::cout);
+        1:   74:    s1.print(std::cout, 1, 2);
+        1:   75:    s2.print(std::cout);
+        1:   76:    s2.print(std::cout, 1, 2);
+        1:   77:}
+------------------
+_ZN19Test_printCASE_TestC2Ev:
+function _ZN19Test_printCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   69:TEST(Test, printCASE)
+call    0 returned 100%
+------------------
+_ZN19Test_printCASE_TestD0Ev:
+function _ZN19Test_printCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   69:TEST(Test, printCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN19Test_printCASE_TestD2Ev:
+function _ZN19Test_printCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   69:TEST(Test, printCASE)
+call    0 returned 100%
+------------------
+_ZN19Test_printCASE_Test8TestBodyEv:
+function _ZN19Test_printCASE_Test8TestBodyEv called 1 returned 100% blocks executed 71%
+        1:   69:TEST(Test, printCASE)
+        -:   70:{
+        1:   71:    SuperString s1 = SuperString::Const("abc");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   72:    SuperString s2 = SuperString();
+call    0 returned 100%
+        1:   73:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   74:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   75:    s2.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   76:    s2.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   77:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+call    3 never executed
+------------------
+        -:   78:
+        4:   79:TEST(Test, trimCASE)
+        -:   80:{
+        1:   81:    SuperString s1 = SuperString::Const(" aaa");
+        1:   82:    SuperString s2 = SuperString::Const("aaa ");
+        1:   83:    SuperString s3 = SuperString::Const("aaa");
+        1:   84:    SuperString s4 = SuperString::Const(" aaa ");
+        1:   85:    SuperString s5 = SuperString();
+       2*:   86:    EXPECT_EQ(s1.trim(), s3);
+       2*:   87:    EXPECT_EQ(s2.trim(), s3);
+       2*:   88:    EXPECT_EQ(s3.trim(), s3);
+       2*:   89:    EXPECT_EQ(s4.trim(), s3);
+       2*:   90:    EXPECT_EQ(s1.trimLeft(), s3);
+       2*:   91:    EXPECT_EQ(s2.trimLeft(), s2);
+       2*:   92:    EXPECT_EQ(s3.trimLeft(), s3);
+       2*:   93:    EXPECT_EQ(s4.trimLeft(), s2);
+       2*:   94:    EXPECT_EQ(s1.trimRight(), s1);
+       2*:   95:    EXPECT_EQ(s2.trimRight(), s3);
+       2*:   96:    EXPECT_EQ(s3.trimRight(), s3);
+       2*:   97:    EXPECT_EQ(s4.trimRight(), s1);
+       2*:   98:    EXPECT_EQ(s5.trim(), s5);
+       2*:   99:    EXPECT_EQ(s5.trimLeft(), s5);
+       2*:  100:    EXPECT_EQ(s5.trimRight(), s5);
+        1:  101:}
+------------------
+_ZN18Test_trimCASE_TestC2Ev:
+function _ZN18Test_trimCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   79:TEST(Test, trimCASE)
+call    0 returned 100%
+------------------
+_ZN18Test_trimCASE_TestD0Ev:
+function _ZN18Test_trimCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   79:TEST(Test, trimCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN18Test_trimCASE_TestD2Ev:
+function _ZN18Test_trimCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   79:TEST(Test, trimCASE)
+call    0 returned 100%
+------------------
+_ZN18Test_trimCASE_Test8TestBodyEv:
+function _ZN18Test_trimCASE_Test8TestBodyEv called 1 returned 100% blocks executed 26%
+        1:   79:TEST(Test, trimCASE)
+        -:   80:{
+        1:   81:    SuperString s1 = SuperString::Const(" aaa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   82:    SuperString s2 = SuperString::Const("aaa ");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   83:    SuperString s3 = SuperString::Const("aaa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   84:    SuperString s4 = SuperString::Const(" aaa ");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:   85:    SuperString s5 = SuperString();
+call    0 returned 100%
+       2*:   86:    EXPECT_EQ(s1.trim(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   87:    EXPECT_EQ(s2.trim(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   88:    EXPECT_EQ(s3.trim(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   89:    EXPECT_EQ(s4.trim(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   90:    EXPECT_EQ(s1.trimLeft(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   91:    EXPECT_EQ(s2.trimLeft(), s2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   92:    EXPECT_EQ(s3.trimLeft(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   93:    EXPECT_EQ(s4.trimLeft(), s2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   94:    EXPECT_EQ(s1.trimRight(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   95:    EXPECT_EQ(s2.trimRight(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   96:    EXPECT_EQ(s3.trimRight(), s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   97:    EXPECT_EQ(s4.trimRight(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   98:    EXPECT_EQ(s5.trim(), s5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:   99:    EXPECT_EQ(s5.trimLeft(), s5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  100:    EXPECT_EQ(s5.trimRight(), s5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  101:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+------------------
+        -:  102:
+        4:  103:TEST(Test, operatorCASE)
+        -:  104:{
+        1:  105:    SuperString s1 = SuperString::Const("a");
+        1:  106:    SuperString s2 = SuperString::Const("b");
+        1:  107:    SuperString s3 = SuperString::Const("ab");
+        1:  108:    SuperString s4 = SuperString::Const("aa");
+       2*:  109:    EXPECT_EQ(s1 + s2, s3);
+       2*:  110:    EXPECT_EQ(s1 * 2, s4);
+        1:  111:    s1 = s1;
+        1:  112:    s1 = s3;
+        1:  113:}
+------------------
+_ZN22Test_operatorCASE_TestC2Ev:
+function _ZN22Test_operatorCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  103:TEST(Test, operatorCASE)
+call    0 returned 100%
+------------------
+_ZN22Test_operatorCASE_TestD0Ev:
+function _ZN22Test_operatorCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  103:TEST(Test, operatorCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN22Test_operatorCASE_TestD2Ev:
+function _ZN22Test_operatorCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  103:TEST(Test, operatorCASE)
+call    0 returned 100%
+------------------
+_ZN22Test_operatorCASE_Test8TestBodyEv:
+function _ZN22Test_operatorCASE_Test8TestBodyEv called 1 returned 100% blocks executed 34%
+        1:  103:TEST(Test, operatorCASE)
+        -:  104:{
+        1:  105:    SuperString s1 = SuperString::Const("a");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  106:    SuperString s2 = SuperString::Const("b");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  107:    SuperString s3 = SuperString::Const("ab");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  108:    SuperString s4 = SuperString::Const("aa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       2*:  109:    EXPECT_EQ(s1 + s2, s3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  110:    EXPECT_EQ(s1 * 2, s4);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  111:    s1 = s1;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  112:    s1 = s3;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  113:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+------------------
+        -:  114:
+        4:  115:TEST(Test, const_copyCASE)
+        -:  116:{
+        1:  117:    SuperString s1 = SuperString::Const("a", SuperString::Encoding::ASCII);
+        1:  118:    SuperString s2 = SuperString::Const("a", SuperString::Encoding::UTF16BE);
+        1:  119:    SuperString s3 = SuperString::Const("a", SuperString::Encoding::UTF32);
+        1:  120:    int a[3] = {1, 2, 3};
+        1:  121:    SuperString::Byte b[3] = "12";
+        1:  122:    char c[3] = "34";
+        1:  123:    SuperString s4 = SuperString::Const(a);
+        1:  124:    SuperString s5 = SuperString::Const(b);
+        1:  125:    SuperString s6 = SuperString::Copy(c);
+        1:  126:    SuperString s7 = SuperString::Copy(c, SuperString::Encoding::ASCII);
+        1:  127:    SuperString s8 = SuperString::Copy(c, SuperString::Encoding::UTF16BE);
+        1:  128:    SuperString s9 = SuperString::Copy(c, SuperString::Encoding::UTF32);
+        1:  129:    SuperString s10 = SuperString::Copy(a);
+        1:  130:    SuperString s11 = SuperString::Copy(b);
+        1:  131:}
+------------------
+_ZN24Test_const_copyCASE_TestC2Ev:
+function _ZN24Test_const_copyCASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  115:TEST(Test, const_copyCASE)
+call    0 returned 100%
+------------------
+_ZN24Test_const_copyCASE_TestD0Ev:
+function _ZN24Test_const_copyCASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  115:TEST(Test, const_copyCASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN24Test_const_copyCASE_TestD2Ev:
+function _ZN24Test_const_copyCASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  115:TEST(Test, const_copyCASE)
+call    0 returned 100%
+------------------
+_ZN24Test_const_copyCASE_Test8TestBodyEv:
+function _ZN24Test_const_copyCASE_Test8TestBodyEv called 1 returned 100% blocks executed 55%
+        1:  115:TEST(Test, const_copyCASE)
+        -:  116:{
+        1:  117:    SuperString s1 = SuperString::Const("a", SuperString::Encoding::ASCII);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  118:    SuperString s2 = SuperString::Const("a", SuperString::Encoding::UTF16BE);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  119:    SuperString s3 = SuperString::Const("a", SuperString::Encoding::UTF32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  120:    int a[3] = {1, 2, 3};
+        1:  121:    SuperString::Byte b[3] = "12";
+        1:  122:    char c[3] = "34";
+        1:  123:    SuperString s4 = SuperString::Const(a);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  124:    SuperString s5 = SuperString::Const(b);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  125:    SuperString s6 = SuperString::Copy(c);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  126:    SuperString s7 = SuperString::Copy(c, SuperString::Encoding::ASCII);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  127:    SuperString s8 = SuperString::Copy(c, SuperString::Encoding::UTF16BE);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  128:    SuperString s9 = SuperString::Copy(c, SuperString::Encoding::UTF32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  129:    SuperString s10 = SuperString::Copy(a);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  130:    SuperString s11 = SuperString::Copy(b);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  131:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+call   10 returned 100%
+call   11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+------------------
+        -:  132:
+        4:  133:TEST(Test, stringsequence_violent_CASE)
+        -:  134:{
+        1:  135:    SuperString s1 = SuperString::Const("aaa");
+        1:  136:    SuperString s2 = SuperString::Const("");
+       1*:  137:    EXPECT_EQ(s1.isSequenceEmpty(), false);
+       1*:  138:    EXPECT_EQ(s1.isSequenceNotEmpty(), true);
+       1*:  139:    EXPECT_EQ(s2.testrefRelease_case0(), true);
+       1*:  140:    EXPECT_EQ(s1.testfreeingCost_notnull(), true);
+       1*:  141:    EXPECT_EQ(s1.testbad_substringMatches(), false);
+        1:  142:}
+------------------
+_ZN37Test_stringsequence_violent_CASE_TestC2Ev:
+function _ZN37Test_stringsequence_violent_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  133:TEST(Test, stringsequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN37Test_stringsequence_violent_CASE_TestD0Ev:
+function _ZN37Test_stringsequence_violent_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  133:TEST(Test, stringsequence_violent_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN37Test_stringsequence_violent_CASE_TestD2Ev:
+function _ZN37Test_stringsequence_violent_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  133:TEST(Test, stringsequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN37Test_stringsequence_violent_CASE_Test8TestBodyEv:
+function _ZN37Test_stringsequence_violent_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 23%
+        1:  133:TEST(Test, stringsequence_violent_CASE)
+        -:  134:{
+        1:  135:    SuperString s1 = SuperString::Const("aaa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  136:    SuperString s2 = SuperString::Const("");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  137:    EXPECT_EQ(s1.isSequenceEmpty(), false);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  138:    EXPECT_EQ(s1.isSequenceNotEmpty(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  139:    EXPECT_EQ(s2.testrefRelease_case0(), true);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+call   17 never executed
+call   18 never executed
+call   19 returned 100%
+call   20 never executed
+call   21 never executed
+call   22 never executed
+       1*:  140:    EXPECT_EQ(s1.testfreeingCost_notnull(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  141:    EXPECT_EQ(s1.testbad_substringMatches(), false);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  142:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+call    3 never executed
+------------------
+        -:  143:
+        4:  144:TEST(Test, constASCIIsequence_CASE)
+        -:  145:{
+        1:  146:    SuperString s1 = SuperString::Const("aaa", SuperString::Encoding::ASCII);
+        1:  147:    SuperString s2 = SuperString::Const(" aaa ", SuperString::Encoding::ASCII);
+       1*:  148:    EXPECT_EQ(s1.length(), 3);
+       1*:  149:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+       1*:  150:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+       2*:  151:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::ASCII));
+       1*:  152:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+       1*:  153:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  154:    s1.print(std::cout);
+        1:  155:    s1.print(std::cout, 1, 2);
+        1:  156:    s1.print(std::cout, 1, 5);
+        1:  157:    s1.print(std::cout, -1, 2);
+       1*:  158:    EXPECT_EQ(s2.length(), 5);
+        1:  159:    s2.trim();
+        1:  160:    s2.trimLeft();
+        1:  161:    s2.trimRight();
+        1:  162:}
+------------------
+_ZN33Test_constASCIIsequence_CASE_TestC2Ev:
+function _ZN33Test_constASCIIsequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  144:TEST(Test, constASCIIsequence_CASE)
+call    0 returned 100%
+------------------
+_ZN33Test_constASCIIsequence_CASE_TestD0Ev:
+function _ZN33Test_constASCIIsequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  144:TEST(Test, constASCIIsequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN33Test_constASCIIsequence_CASE_TestD2Ev:
+function _ZN33Test_constASCIIsequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  144:TEST(Test, constASCIIsequence_CASE)
+call    0 returned 100%
+------------------
+_ZN33Test_constASCIIsequence_CASE_Test8TestBodyEv:
+function _ZN33Test_constASCIIsequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 28%
+        1:  144:TEST(Test, constASCIIsequence_CASE)
+        -:  145:{
+        1:  146:    SuperString s1 = SuperString::Const("aaa", SuperString::Encoding::ASCII);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  147:    SuperString s2 = SuperString::Const(" aaa ", SuperString::Encoding::ASCII);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  148:    EXPECT_EQ(s1.length(), 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  149:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  150:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       2*:  151:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::ASCII));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+call   28 never executed
+call   29 returned 100%
+call   30 never executed
+call   31 never executed
+call   32 never executed
+       1*:  152:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  153:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  154:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  155:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  156:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  157:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  158:    EXPECT_EQ(s2.length(), 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  159:    s2.trim();
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+        1:  160:    s2.trimLeft();
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+        1:  161:    s2.trimRight();
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+        1:  162:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+call    3 never executed
+------------------
+        -:  163:
+        4:  164:TEST(Test, copyASCIIsequence_CASE)
+        -:  165:{
+        1:  166:    SuperString s1 = SuperString::Copy("aaa", SuperString::Encoding::ASCII);
+       1*:  167:    EXPECT_EQ(s1.length(), 3);
+       1*:  168:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+       1*:  169:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+       2*:  170:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::ASCII));
+       1*:  171:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+       1*:  172:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  173:    s1.print(std::cout);
+        1:  174:    s1.print(std::cout, 1, 2);
+        1:  175:    s1.print(std::cout, 1, 5);
+        1:  176:    s1.print(std::cout, -1, 2);
+       2*:  177:    EXPECT_EQ(s1.trim(), s1);
+       2*:  178:    EXPECT_EQ(s1.trimLeft(), s1);
+       2*:  179:    EXPECT_EQ(s1.trimRight(), s1);
+       1*:  180:    EXPECT_EQ(s1.testCopyASCIISequence(), true);
+        1:  181:}
+------------------
+_ZN32Test_copyASCIIsequence_CASE_TestC2Ev:
+function _ZN32Test_copyASCIIsequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  164:TEST(Test, copyASCIIsequence_CASE)
+call    0 returned 100%
+------------------
+_ZN32Test_copyASCIIsequence_CASE_TestD0Ev:
+function _ZN32Test_copyASCIIsequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  164:TEST(Test, copyASCIIsequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN32Test_copyASCIIsequence_CASE_TestD2Ev:
+function _ZN32Test_copyASCIIsequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  164:TEST(Test, copyASCIIsequence_CASE)
+call    0 returned 100%
+------------------
+_ZN32Test_copyASCIIsequence_CASE_Test8TestBodyEv:
+function _ZN32Test_copyASCIIsequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 26%
+        1:  164:TEST(Test, copyASCIIsequence_CASE)
+        -:  165:{
+        1:  166:    SuperString s1 = SuperString::Copy("aaa", SuperString::Encoding::ASCII);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  167:    EXPECT_EQ(s1.length(), 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  168:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  169:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       2*:  170:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::ASCII));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+call   28 never executed
+call   29 returned 100%
+call   30 never executed
+call   31 never executed
+call   32 never executed
+       1*:  171:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  172:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  173:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  174:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  175:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  176:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       2*:  177:    EXPECT_EQ(s1.trim(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  178:    EXPECT_EQ(s1.trimLeft(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  179:    EXPECT_EQ(s1.trimRight(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  180:    EXPECT_EQ(s1.testCopyASCIISequence(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  181:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  182:
+        4:  183:TEST(Test, constUTF8Sequence_CASE)
+        -:  184:{
+        1:  185:    SuperString s1 = SuperString::Const("aaa", SuperString::Encoding::UTF8);
+        1:  186:    SuperString::Byte b[10] = {0xFF, 0xF0, 0xE0, 0xC0, 0xFF};
+        1:  187:    SuperString s2 = SuperString::Const(b, SuperString::Encoding::UTF8);
+       1*:  188:    EXPECT_EQ(s2.length(), 0);
+       1*:  189:    EXPECT_EQ(s2.codeUnitAt(0).isErr(), 1);
+       1*:  190:    EXPECT_EQ(s1.length(), 3);
+        1:  191:    SuperString::Byte c[10] = {0xF0};
+        2:  192:    SuperString s3 = SuperString::Const(c, SuperString::Encoding::UTF8);
+       1*:  193:    EXPECT_EQ(s3.length(), 1);
+       1*:  194:    EXPECT_EQ(s3.codeUnitAt(0).ok(), 0);
+        1:  195:    SuperString::Byte d[10] = {0xE0};
+        2:  196:    SuperString s4 = SuperString::Const(d, SuperString::Encoding::UTF8);
+       1*:  197:    EXPECT_EQ(s4.length(), 1);
+       1*:  198:    EXPECT_EQ(s4.codeUnitAt(0).ok(), 0);
+        1:  199:    SuperString::Byte e[10] = {0xC0};
+        2:  200:    SuperString s5 = SuperString::Const(e, SuperString::Encoding::UTF8);
+       1*:  201:    EXPECT_EQ(s5.length(), 1);
+       1*:  202:    EXPECT_EQ(s5.codeUnitAt(0).ok(), 0);
+       1*:  203:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+       1*:  204:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+       2*:  205:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::UTF8));
+       1*:  206:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+       1*:  207:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  208:    s1.print(std::cout);
+        1:  209:    s1.print(std::cout, 1, 2);
+        1:  210:    s1.print(std::cout, 1, 5);
+        1:  211:    s1.print(std::cout, -1, 2);
+        1:  212:    s1.print(std::cout, 2, 1);
+        1:  213:    s2.print(std::cout, 0, 0);
+       2*:  214:    EXPECT_EQ(s1.trim(), s1);
+       2*:  215:    EXPECT_EQ(s1.trimLeft(), s1);
+       2*:  216:    EXPECT_EQ(s1.trimRight(), s1);
+        1:  217:}
+------------------
+_ZN32Test_constUTF8Sequence_CASE_TestC2Ev:
+function _ZN32Test_constUTF8Sequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  183:TEST(Test, constUTF8Sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN32Test_constUTF8Sequence_CASE_TestD0Ev:
+function _ZN32Test_constUTF8Sequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  183:TEST(Test, constUTF8Sequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN32Test_constUTF8Sequence_CASE_TestD2Ev:
+function _ZN32Test_constUTF8Sequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  183:TEST(Test, constUTF8Sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN32Test_constUTF8Sequence_CASE_Test8TestBodyEv:
+function _ZN32Test_constUTF8Sequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 25%
+        1:  183:TEST(Test, constUTF8Sequence_CASE)
+        -:  184:{
+        1:  185:    SuperString s1 = SuperString::Const("aaa", SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  186:    SuperString::Byte b[10] = {0xFF, 0xF0, 0xE0, 0xC0, 0xFF};
+        1:  187:    SuperString s2 = SuperString::Const(b, SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  188:    EXPECT_EQ(s2.length(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  189:    EXPECT_EQ(s2.codeUnitAt(0).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  190:    EXPECT_EQ(s1.length(), 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  191:    SuperString::Byte c[10] = {0xF0};
+        2:  192:    SuperString s3 = SuperString::Const(c, SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 never executed
+       1*:  193:    EXPECT_EQ(s3.length(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  194:    EXPECT_EQ(s3.codeUnitAt(0).ok(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  195:    SuperString::Byte d[10] = {0xE0};
+        2:  196:    SuperString s4 = SuperString::Const(d, SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 never executed
+       1*:  197:    EXPECT_EQ(s4.length(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  198:    EXPECT_EQ(s4.codeUnitAt(0).ok(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  199:    SuperString::Byte e[10] = {0xC0};
+        2:  200:    SuperString s5 = SuperString::Const(e, SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 never executed
+       1*:  201:    EXPECT_EQ(s5.length(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  202:    EXPECT_EQ(s5.codeUnitAt(0).ok(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  203:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  204:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       2*:  205:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::UTF8));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+call   28 never executed
+call   29 returned 100%
+call   30 never executed
+call   31 never executed
+call   32 never executed
+       1*:  206:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  207:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  208:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  209:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  210:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  211:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  212:    s1.print(std::cout, 2, 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  213:    s2.print(std::cout, 0, 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       2*:  214:    EXPECT_EQ(s1.trim(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  215:    EXPECT_EQ(s1.trimLeft(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  216:    EXPECT_EQ(s1.trimRight(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  217:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+call    3 never executed
+------------------
+        -:  218:
+        4:  219:TEST(Test, copyUTF8sequence_CASE)
+        -:  220:{
+        1:  221:    SuperString s1 = SuperString::Copy("aaa", SuperString::Encoding::UTF8);
+        1:  222:    SuperString s2 = SuperString::Copy(" aaa ", SuperString::Encoding::UTF8);
+        1:  223:    SuperString s3 = SuperString::Copy(" aaa", SuperString::Encoding::UTF8);
+        1:  224:    SuperString s4 = SuperString::Copy("aaa ", SuperString::Encoding::UTF8);
+        1:  225:    SuperString::Byte b[10] = {0xFF, 0xF0, 0xE0, 0xC0, 0xFF};
+        1:  226:    SuperString s5 = SuperString::Copy(b, SuperString::Encoding::UTF8);
+       1*:  227:    EXPECT_EQ(s1.length(), 3);
+       1*:  228:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+       1*:  229:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+       2*:  230:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::UTF8));
+       1*:  231:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+       1*:  232:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  233:    s1.print(std::cout);
+        1:  234:    s1.print(std::cout, 1, 2);
+        1:  235:    s1.print(std::cout, 1, 5);
+        1:  236:    s1.print(std::cout, -1, 2);
+       2*:  237:    EXPECT_EQ(s2.trim(), s1);
+       2*:  238:    EXPECT_EQ(s3.trimLeft(), s1);
+       2*:  239:    EXPECT_EQ(s4.trimRight(), s1);
+       1*:  240:    EXPECT_EQ(s1.testCopyUTF8Sequence(), true);
+        1:  241:}
+------------------
+_ZN31Test_copyUTF8sequence_CASE_TestC2Ev:
+function _ZN31Test_copyUTF8sequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  219:TEST(Test, copyUTF8sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN31Test_copyUTF8sequence_CASE_TestD0Ev:
+function _ZN31Test_copyUTF8sequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  219:TEST(Test, copyUTF8sequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN31Test_copyUTF8sequence_CASE_TestD2Ev:
+function _ZN31Test_copyUTF8sequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  219:TEST(Test, copyUTF8sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN31Test_copyUTF8sequence_CASE_Test8TestBodyEv:
+function _ZN31Test_copyUTF8sequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 27%
+        1:  219:TEST(Test, copyUTF8sequence_CASE)
+        -:  220:{
+        1:  221:    SuperString s1 = SuperString::Copy("aaa", SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  222:    SuperString s2 = SuperString::Copy(" aaa ", SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  223:    SuperString s3 = SuperString::Copy(" aaa", SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  224:    SuperString s4 = SuperString::Copy("aaa ", SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  225:    SuperString::Byte b[10] = {0xFF, 0xF0, 0xE0, 0xC0, 0xFF};
+        1:  226:    SuperString s5 = SuperString::Copy(b, SuperString::Encoding::UTF8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  227:    EXPECT_EQ(s1.length(), 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  228:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 'a');
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  229:    EXPECT_EQ(s1.codeUnitAt(5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       2*:  230:    EXPECT_EQ(s1.substring(1, 2).ok(), SuperString::Const("a", SuperString::Encoding::UTF8));
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+call   28 never executed
+call   29 returned 100%
+call   30 never executed
+call   31 never executed
+call   32 never executed
+       1*:  231:    EXPECT_EQ(s1.substring(1, 5).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  232:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  233:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  234:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  235:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  236:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       2*:  237:    EXPECT_EQ(s2.trim(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  238:    EXPECT_EQ(s3.trimLeft(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       2*:  239:    EXPECT_EQ(s4.trimRight(), s1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  240:    EXPECT_EQ(s1.testCopyUTF8Sequence(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  241:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+------------------
+        -:  242:
+        4:  243:TEST(Test, constUTF16BESequence_CASE)
+        -:  244:{
+        -:  245:    SuperString::Byte b[11];
+        1:  246:    b[0] = b[2] = b[4] = b[6] = b[8] = 0x00;
+        1:  247:    b[3] = b[5] = b[7] = 0x61;
+        1:  248:    b[1] = b[9] = 0x20;
+        1:  249:    SuperString s1 = SuperString::Const(b, SuperString::Encoding::UTF16BE);
+       1*:  250:    EXPECT_EQ(s1.length(), 5);
+       1*:  251:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+       1*:  252:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+       1*:  253:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+       1*:  254:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+       1*:  255:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  256:    s1.print(std::cout);
+        1:  257:    s1.print(std::cout, 1, 2);
+        1:  258:    s1.print(std::cout, 1, 5);
+        1:  259:    s1.print(std::cout, -1, 2);
+       1*:  260:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+       1*:  261:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+       1*:  262:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+       1*:  263:    EXPECT_EQ(s1.testUTF16BE_simple(), true);
+        1:  264:}
+------------------
+_ZN35Test_constUTF16BESequence_CASE_TestC2Ev:
+function _ZN35Test_constUTF16BESequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  243:TEST(Test, constUTF16BESequence_CASE)
+call    0 returned 100%
+------------------
+_ZN35Test_constUTF16BESequence_CASE_TestD0Ev:
+function _ZN35Test_constUTF16BESequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  243:TEST(Test, constUTF16BESequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN35Test_constUTF16BESequence_CASE_TestD2Ev:
+function _ZN35Test_constUTF16BESequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  243:TEST(Test, constUTF16BESequence_CASE)
+call    0 returned 100%
+------------------
+_ZN35Test_constUTF16BESequence_CASE_Test8TestBodyEv:
+function _ZN35Test_constUTF16BESequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 25%
+        1:  243:TEST(Test, constUTF16BESequence_CASE)
+        -:  244:{
+        -:  245:    SuperString::Byte b[11];
+        1:  246:    b[0] = b[2] = b[4] = b[6] = b[8] = 0x00;
+        1:  247:    b[3] = b[5] = b[7] = 0x61;
+        1:  248:    b[1] = b[9] = 0x20;
+        1:  249:    SuperString s1 = SuperString::Const(b, SuperString::Encoding::UTF16BE);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  250:    EXPECT_EQ(s1.length(), 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  251:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  252:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  253:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  254:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  255:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  256:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  257:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  258:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  259:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  260:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  261:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  262:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  263:    EXPECT_EQ(s1.testUTF16BE_simple(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  264:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  265:
+        4:  266:TEST(Test, copyUTF16BESequence_CASE)
+        -:  267:{
+        -:  268:    SuperString::Byte b[11];
+        1:  269:    b[0] = b[2] = b[4] = b[6] = b[8] = 0x00;
+        1:  270:    b[3] = b[5] = b[7] = 0x61;
+        1:  271:    b[1] = b[9] = 0x20;
+        1:  272:    SuperString s1 = SuperString::Copy(b, SuperString::Encoding::UTF16BE);
+       1*:  273:    EXPECT_EQ(s1.length(), 5);
+       1*:  274:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+       1*:  275:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+       1*:  276:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+       1*:  277:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+       1*:  278:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  279:    s1.print(std::cout);
+        1:  280:    s1.print(std::cout, 1, 2);
+        1:  281:    s1.print(std::cout, 1, 5);
+        1:  282:    s1.print(std::cout, -1, 2);
+       1*:  283:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+       1*:  284:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+       1*:  285:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+       1*:  286:    EXPECT_EQ(s1.testCopyUTF16BESequence(), true);
+        1:  287:}
+------------------
+_ZN34Test_copyUTF16BESequence_CASE_TestC2Ev:
+function _ZN34Test_copyUTF16BESequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  266:TEST(Test, copyUTF16BESequence_CASE)
+call    0 returned 100%
+------------------
+_ZN34Test_copyUTF16BESequence_CASE_TestD0Ev:
+function _ZN34Test_copyUTF16BESequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  266:TEST(Test, copyUTF16BESequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN34Test_copyUTF16BESequence_CASE_TestD2Ev:
+function _ZN34Test_copyUTF16BESequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  266:TEST(Test, copyUTF16BESequence_CASE)
+call    0 returned 100%
+------------------
+_ZN34Test_copyUTF16BESequence_CASE_Test8TestBodyEv:
+function _ZN34Test_copyUTF16BESequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 25%
+        1:  266:TEST(Test, copyUTF16BESequence_CASE)
+        -:  267:{
+        -:  268:    SuperString::Byte b[11];
+        1:  269:    b[0] = b[2] = b[4] = b[6] = b[8] = 0x00;
+        1:  270:    b[3] = b[5] = b[7] = 0x61;
+        1:  271:    b[1] = b[9] = 0x20;
+        1:  272:    SuperString s1 = SuperString::Copy(b, SuperString::Encoding::UTF16BE);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  273:    EXPECT_EQ(s1.length(), 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  274:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  275:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  276:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  277:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  278:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  279:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  280:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  281:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  282:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  283:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  284:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  285:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  286:    EXPECT_EQ(s1.testCopyUTF16BESequence(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  287:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  288:
+        4:  289:TEST(Test, constUTF32Sequence_CASE)
+        -:  290:{
+        1:  291:    SuperString::Byte b[16] = {};
+        1:  292:    b[0] = 0x20;
+        1:  293:    b[4] = 0x61;
+        1:  294:    b[8] = 0x20;
+        1:  295:    SuperString s1 = SuperString::Const(b, SuperString::Encoding::UTF32);
+       1*:  296:    EXPECT_EQ(s1.length(), 3);
+       1*:  297:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+       1*:  298:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+       1*:  299:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+       1*:  300:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+       1*:  301:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  302:    s1.print(std::cout);
+        1:  303:    s1.print(std::cout, 1, 2);
+        1:  304:    s1.print(std::cout, 1, 5);
+        1:  305:    s1.print(std::cout, -1, 2);
+       1*:  306:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+       1*:  307:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+       1*:  308:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+       1*:  309:    EXPECT_EQ(s1.testUTF32_simple(), true);
+        1:  310:}
+------------------
+_ZN33Test_constUTF32Sequence_CASE_TestC2Ev:
+function _ZN33Test_constUTF32Sequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  289:TEST(Test, constUTF32Sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN33Test_constUTF32Sequence_CASE_TestD0Ev:
+function _ZN33Test_constUTF32Sequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  289:TEST(Test, constUTF32Sequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN33Test_constUTF32Sequence_CASE_TestD2Ev:
+function _ZN33Test_constUTF32Sequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  289:TEST(Test, constUTF32Sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN33Test_constUTF32Sequence_CASE_Test8TestBodyEv:
+function _ZN33Test_constUTF32Sequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 25%
+        1:  289:TEST(Test, constUTF32Sequence_CASE)
+        -:  290:{
+        1:  291:    SuperString::Byte b[16] = {};
+        1:  292:    b[0] = 0x20;
+        1:  293:    b[4] = 0x61;
+        1:  294:    b[8] = 0x20;
+        1:  295:    SuperString s1 = SuperString::Const(b, SuperString::Encoding::UTF32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  296:    EXPECT_EQ(s1.length(), 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  297:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  298:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  299:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  300:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  301:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  302:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  303:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  304:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  305:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  306:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  307:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  308:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  309:    EXPECT_EQ(s1.testUTF32_simple(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  310:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  311:
+        4:  312:TEST(Test, copyUTF32Sequence_CASE)
+        -:  313:{
+        1:  314:    SuperString::Byte b[16] = {};
+        1:  315:    b[0] = 0x20;
+        1:  316:    b[4] = 0x61;
+        1:  317:    b[8] = 0x20;
+        1:  318:    SuperString s1 = SuperString::Copy(b, SuperString::Encoding::UTF32);
+       1*:  319:    EXPECT_EQ(s1.length(), 3);
+       1*:  320:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+       1*:  321:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+       1*:  322:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+       1*:  323:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+       1*:  324:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+        1:  325:    s1.print(std::cout);
+        1:  326:    s1.print(std::cout, 1, 2);
+        1:  327:    s1.print(std::cout, 1, 5);
+        1:  328:    s1.print(std::cout, -1, 2);
+       1*:  329:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+       1*:  330:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+       1*:  331:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+       1*:  332:    EXPECT_EQ(s1.testCopyUTF32Sequence(), true);
+        1:  333:}
+------------------
+_ZN32Test_copyUTF32Sequence_CASE_TestC2Ev:
+function _ZN32Test_copyUTF32Sequence_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  312:TEST(Test, copyUTF32Sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN32Test_copyUTF32Sequence_CASE_TestD0Ev:
+function _ZN32Test_copyUTF32Sequence_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  312:TEST(Test, copyUTF32Sequence_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN32Test_copyUTF32Sequence_CASE_TestD2Ev:
+function _ZN32Test_copyUTF32Sequence_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  312:TEST(Test, copyUTF32Sequence_CASE)
+call    0 returned 100%
+------------------
+_ZN32Test_copyUTF32Sequence_CASE_Test8TestBodyEv:
+function _ZN32Test_copyUTF32Sequence_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 25%
+        1:  312:TEST(Test, copyUTF32Sequence_CASE)
+        -:  313:{
+        1:  314:    SuperString::Byte b[16] = {};
+        1:  315:    b[0] = 0x20;
+        1:  316:    b[4] = 0x61;
+        1:  317:    b[8] = 0x20;
+        1:  318:    SuperString s1 = SuperString::Copy(b, SuperString::Encoding::UTF32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  319:    EXPECT_EQ(s1.length(), 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  320:    EXPECT_EQ(s1.codeUnitAt(0).ok(), 32);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  321:    EXPECT_EQ(s1.codeUnitAt(10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  322:    EXPECT_EQ(s1.substring(1, 2).isOk(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  323:    EXPECT_EQ(s1.substring(1, 10).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+       1*:  324:    EXPECT_EQ(s1.substring(-1, 2).isErr(), 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  325:    s1.print(std::cout);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  326:    s1.print(std::cout, 1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  327:    s1.print(std::cout, 1, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  328:    s1.print(std::cout, -1, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  329:    EXPECT_EQ(s1.trim().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  330:    EXPECT_EQ(s1.trimLeft().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  331:    EXPECT_EQ(s1.trimRight().isEmpty(), 0);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+call   10 returned 100%
+branch 11 taken 0% (fallthrough)
+branch 12 taken 100%
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+call   20 never executed
+branch 21 never executed
+branch 22 never executed
+call   23 never executed
+call   24 never executed
+call   25 returned 100%
+call   26 never executed
+call   27 never executed
+call   28 never executed
+       1*:  332:    EXPECT_EQ(s1.testCopyUTF32Sequence(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  333:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  334:
+        4:  335:TEST(Test, substringSequence_violent_CASE)
+        -:  336:{
+        1:  337:    SuperString s1 = SuperString::Const("aaa");
+        1:  338:    SuperString s2 = SuperString::Const(" aaa ");
+       1*:  339:    EXPECT_EQ(s1.testSubstringSequence_ref(), true);
+       1*:  340:    EXPECT_EQ(s1.testSubstringSequence_substr(), true);
+       1*:  341:    EXPECT_EQ(s2.testSubstringSequence_trim(), true);
+        1:  342:}
+------------------
+_ZN40Test_substringSequence_violent_CASE_TestC2Ev:
+function _ZN40Test_substringSequence_violent_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  335:TEST(Test, substringSequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN40Test_substringSequence_violent_CASE_TestD0Ev:
+function _ZN40Test_substringSequence_violent_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  335:TEST(Test, substringSequence_violent_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN40Test_substringSequence_violent_CASE_TestD2Ev:
+function _ZN40Test_substringSequence_violent_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  335:TEST(Test, substringSequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN40Test_substringSequence_violent_CASE_Test8TestBodyEv:
+function _ZN40Test_substringSequence_violent_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 25%
+        1:  335:TEST(Test, substringSequence_violent_CASE)
+        -:  336:{
+        1:  337:    SuperString s1 = SuperString::Const("aaa");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  338:    SuperString s2 = SuperString::Const(" aaa ");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  339:    EXPECT_EQ(s1.testSubstringSequence_ref(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  340:    EXPECT_EQ(s1.testSubstringSequence_substr(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+       1*:  341:    EXPECT_EQ(s2.testSubstringSequence_trim(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  342:}
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+call    3 never executed
+------------------
+        -:  343:
+        4:  344:TEST(Test, concatenationSequence_violent_CASE)
+        -:  345:{
+        1:  346:    SuperString s1 = SuperString::Const(" aaa ");
+       1*:  347:    EXPECT_EQ(s1.testConcatenationSequence_simple(), true);
+        1:  348:}
+------------------
+_ZN44Test_concatenationSequence_violent_CASE_TestC2Ev:
+function _ZN44Test_concatenationSequence_violent_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  344:TEST(Test, concatenationSequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN44Test_concatenationSequence_violent_CASE_TestD0Ev:
+function _ZN44Test_concatenationSequence_violent_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  344:TEST(Test, concatenationSequence_violent_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN44Test_concatenationSequence_violent_CASE_TestD2Ev:
+function _ZN44Test_concatenationSequence_violent_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  344:TEST(Test, concatenationSequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN44Test_concatenationSequence_violent_CASE_Test8TestBodyEv:
+function _ZN44Test_concatenationSequence_violent_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 29%
+        1:  344:TEST(Test, concatenationSequence_violent_CASE)
+        -:  345:{
+        1:  346:    SuperString s1 = SuperString::Const(" aaa ");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  347:    EXPECT_EQ(s1.testConcatenationSequence_simple(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  348:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  349:
+        4:  350:TEST(Test, multipleSequence_violent_CASE)
+        -:  351:{
+        1:  352:    SuperString s1 = SuperString::Const(" aaa ");
+       1*:  353:    EXPECT_EQ(s1.testMultipleSequence_simple(), true);
+        1:  354:}
+------------------
+_ZN39Test_multipleSequence_violent_CASE_TestC2Ev:
+function _ZN39Test_multipleSequence_violent_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  350:TEST(Test, multipleSequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN39Test_multipleSequence_violent_CASE_TestD0Ev:
+function _ZN39Test_multipleSequence_violent_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  350:TEST(Test, multipleSequence_violent_CASE)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN39Test_multipleSequence_violent_CASE_TestD2Ev:
+function _ZN39Test_multipleSequence_violent_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  350:TEST(Test, multipleSequence_violent_CASE)
+call    0 returned 100%
+------------------
+_ZN39Test_multipleSequence_violent_CASE_Test8TestBodyEv:
+function _ZN39Test_multipleSequence_violent_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 29%
+        1:  350:TEST(Test, multipleSequence_violent_CASE)
+        -:  351:{
+        1:  352:    SuperString s1 = SuperString::Const(" aaa ");
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       1*:  353:    EXPECT_EQ(s1.testMultipleSequence_simple(), true);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+call   22 never executed
+call   23 never executed
+call   24 never executed
+        1:  354:}
+call    0 returned 100%
+call    1 never executed
+------------------
+        -:  355:
+        4:  356:int main(int argc, char **argv)
+        -:  357:{
+        1:  358:    testing::InitGoogleTest(&argc, argv);
+        1:  359:    return RUN_ALL_TESTS();
+------------------
+_ZN28Test_ASCII_violent_CASE_TestC2Ev:
+function _ZN28Test_ASCII_violent_CASE_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:  356:int main(int argc, char **argv)
+call    0 returned 100%
+------------------
+_ZN28Test_ASCII_violent_CASE_TestD0Ev:
+function _ZN28Test_ASCII_violent_CASE_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:  356:int main(int argc, char **argv)
+call    0 returned 100%
+call    1 returned 100%
+------------------
+_ZN28Test_ASCII_violent_CASE_TestD2Ev:
+function _ZN28Test_ASCII_violent_CASE_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:  356:int main(int argc, char **argv)
+call    0 returned 100%
+------------------
+_ZN28Test_ASCII_violent_CASE_Test8TestBodyEv:
+function _ZN28Test_ASCII_violent_CASE_Test8TestBodyEv called 1 returned 100% blocks executed 100%
+        1:  356:int main(int argc, char **argv)
+        -:  357:{
+        1:  358:    testing::InitGoogleTest(&argc, argv);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  359:    return RUN_ALL_TESTS();
+call    0 returned 100%
+------------------
+        -:  360:}

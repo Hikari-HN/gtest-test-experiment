@@ -2,7 +2,7 @@
  * @Author: Hikari_HN lizihao_@nudt.edu.cn
  * @Date: 2022-08-03 17:01:53
  * @LastEditors: Hikari_HN lizihao_@nudt.edu.cn
- * @LastEditTime: 2022-08-14 16:27:01
+ * @LastEditTime: 2022-08-14 22:28:20
  * @FilePath: /gtest-test-experiment/test.cpp
  * @Description:
  *
@@ -47,7 +47,6 @@ TEST(Test, indexCASE)
     EXPECT_EQ(s1.indexOf(s2).ok(), 1);
     EXPECT_EQ(s1.indexOf(s4).isErr(), 1);
     EXPECT_EQ(s1.indexOf(s5).ok(), 0);
-    // s2.indexOf(s1);
     EXPECT_EQ(s3.indexOf(s1).isErr(), 1);
     EXPECT_EQ(s1.lastIndexOf(s2).ok(), 1);
     EXPECT_EQ(s1.lastIndexOf(s4).isErr(), 1);
@@ -352,11 +351,6 @@ TEST(Test, multipleSequence_violent_CASE)
 {
     SuperString s1 = SuperString::Const(" aaa ");
     EXPECT_EQ(s1.testMultipleSequence_simple(), true);
-}
-
-TEST(Test, ASCII_violent_CASE)
-{
-    SuperString s1 = SuperString::Const(" aaa ");
 }
 
 int main(int argc, char **argv)

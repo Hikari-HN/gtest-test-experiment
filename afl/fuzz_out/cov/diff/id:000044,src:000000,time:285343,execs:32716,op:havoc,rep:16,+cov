@@ -1,0 +1,4 @@
+diff id:000043,src:000000,time:221108,execs:26196,op:havoc,rep:8,+cov -> id:000044,src:000000,time:285343,execs:32716,op:havoc,rep:16,+cov
+Src file: /home/hikari/gtest-test-experiment/SuperString.cc
+  New 'line' coverage: 1228
+  New 'line' coverage: 1242

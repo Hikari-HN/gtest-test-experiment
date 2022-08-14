@@ -1,0 +1,12 @@
+diff id:000002,src:000000,time:90,execs:18,op:havoc,rep:2,+cov -> id:000003,src:000000,time:160,execs:27,op:havoc,rep:8,+cov
+Src file: /home/hikari/gtest-test-experiment/SuperString.cc
+  New 'line' coverage: 2009
+  New 'line' coverage: 2010
+  New 'line' coverage: 2011
+  New 'line' coverage: 2012
+  New 'line' coverage: 2014
+Src file: /home/hikari/gtest-test-experiment/afl/afl_test.cpp
+  New 'line' coverage: 178
+  New 'line' coverage: 179
+  New 'line' coverage: 180
+  New 'line' coverage: 187

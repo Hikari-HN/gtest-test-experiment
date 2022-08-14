@@ -1,0 +1,5 @@
+diff id:000005,src:000000,time:368,execs:63,op:havoc,rep:16,+cov -> id:000006,src:000000,time:437,execs:72,op:havoc,rep:16,+cov
+Src file: /home/hikari/gtest-test-experiment/afl/afl_test.cpp
+  New 'line' coverage: 141
+  New 'line' coverage: 142
+  New 'line' coverage: 153

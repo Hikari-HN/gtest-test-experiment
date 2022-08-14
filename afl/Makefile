@@ -4,6 +4,7 @@ AFLFLAGS = -lgtest -pthread -fprofile-arcs -ftest-coverage
 TARGET = afl_test
 
 all:
+	rm -rf fuzz_out
 	mkdir fuzz_out
 	$(AFLCXX) -g -o $(TARGET).o $(AFLFLAGS) -c $(TARGET).cpp
 	$(AFLCXX) -g -o $(TARGET) $(TARGET).o $(AFLFLAGS)

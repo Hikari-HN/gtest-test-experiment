@@ -1,0 +1,24 @@
+diff id:000014,src:000000,time:1730,execs:304,op:havoc,rep:4,+cov -> id:000015,src:000000,time:2071,execs:375,op:havoc,rep:8,+cov
+Src file: /home/hikari/gtest-test-experiment/SuperString.cc
+  New 'function' coverage: _ZNK11SuperString9compareToERKS_()
+  New 'line' coverage: 50
+  New 'line' coverage: 51
+  New 'line' coverage: 52
+  New 'line' coverage: 53
+  New 'line' coverage: 54
+  New 'line' coverage: 55
+  New 'line' coverage: 56
+  New 'line' coverage: 57
+  New 'line' coverage: 60
+  New 'line' coverage: 64
+  New 'line' coverage: 65
+Src file: /home/hikari/gtest-test-experiment/afl/afl_test.cpp
+  New 'line' coverage: 47
+  New 'line' coverage: 48
+  New 'line' coverage: 50
+  New 'line' coverage: 51
+  New 'line' coverage: 52
+  New 'line' coverage: 53
+  New 'line' coverage: 54
+  New 'line' coverage: 55
+  New 'line' coverage: 56
