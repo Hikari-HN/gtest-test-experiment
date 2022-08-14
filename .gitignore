@@ -38,6 +38,7 @@
 *.info
 *.gcov
 output/
+afl/fuzz_out/
 
 # vscode
 .vscode

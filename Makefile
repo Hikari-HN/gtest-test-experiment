@@ -5,6 +5,7 @@ all:
 	gcov -b test.cpp
 	lcov -c -d . -o test.info
 	genhtml test.info -o ./output
+
 clean:
-	rm test *.gcno *.gcda *.o *.info *.gcov
+	rm -f test *.gcno *.gcda *.o *.info *.gcov
 	rm -rf output

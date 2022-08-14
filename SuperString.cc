@@ -1,3 +1,13 @@
+/*
+ * @Author: Hikari_HN lizihao_@nudt.edu.cn
+ * @Date: 2022-08-03 17:01:53
+ * @LastEditors: Hikari_HN lizihao_@nudt.edu.cn
+ * @LastEditTime: 2022-08-14 16:21:45
+ * @FilePath: /gtest-test-experiment/SuperString.cc
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Hikari_HN lizihao_@nudt.edu.cn, All Rights Reserved. 
+ */
 /*-- imports --*/
 
 #include "include/SuperString.hh"
@@ -1897,7 +1907,7 @@ std::size_t SuperString::MultipleSequence::keepingCost() const {
             return sizeof(MultipleSequence) + this->_container._reconstructed._dataLength * sizeof(int);
     }
     // FIXME: Never goes here! by Hikari
-    return 0;
+    // return 0;
 }
 
 std::size_t SuperString::MultipleSequence::reconstructionCost(const StringSequence *sequence) const {

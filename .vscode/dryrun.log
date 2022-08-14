@@ -1,4 +1,4 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/hikari/gtest-test-experiment'
 g++ -o test.o -fprofile-arcs -ftest-coverage -lgtest -pthread -c test.cpp
 g++ -o test test.o -lgtest -pthread -fprofile-arcs -ftest-coverage
