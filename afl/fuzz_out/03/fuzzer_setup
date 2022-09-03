@@ -1,4 +1,0 @@
-# environment variables:
-AFL_KILL_SIGNAL=9
-# command line:
-'afl-fuzz' '-i' 'fuzz_in' '-o' 'fuzz_out' '-S' '03' './afl_test' '@@'
